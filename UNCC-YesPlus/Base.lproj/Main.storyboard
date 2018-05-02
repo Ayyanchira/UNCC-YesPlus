@@ -175,7 +175,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.16470588235294117" green="0.16862745098039217" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="redraw" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCustomCell" rowHeight="228" id="Y2F-xT-9Cu" customClass="EventCustomCellTableViewCell" customModule="UNCC_YesPlus" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="redraw" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventCustomCell" rowHeight="228" id="Y2F-xT-9Cu" customClass="EventCustomCellTableViewCell" customModule="UNCC_YesPlus" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="228"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y2F-xT-9Cu" id="LSN-9C-maw">
@@ -267,6 +267,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.16470588235294117" green="0.16862745098039217" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="eventDescription" destination="AAk-SW-IQe" id="tkG-ee-dER"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -10,9 +10,10 @@ import UIKit
 
 class EventCustomCellTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var eventDescription: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        eventDescription.textContainer.lineBreakMode = .byTruncatingTail
         // Initialization code
     }
 
