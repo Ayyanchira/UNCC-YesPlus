@@ -19,17 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YesPlusImage-1" translatesAutoresizingMaskIntoConstraints="NO" id="Win-Q6-uiV">
-                                <rect key="frame" x="102" y="30" width="171" height="54"/>
+                                <rect key="frame" x="111.5" y="30" width="171" height="54"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurujiImage" translatesAutoresizingMaskIntoConstraints="NO" id="EtR-l5-dqc">
-                                <rect key="frame" x="120" y="92" width="135" height="135"/>
+                                <rect key="frame" x="129.5" y="92" width="135" height="135"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="135" id="DwO-a2-C5k"/>
                                     <constraint firstAttribute="height" constant="135" id="aqa-5b-Lh1"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j55-ZO-8Q1" customClass="UsernameTextField" customModule="UNCC_YesPlus" customModuleProvider="target">
-                                <rect key="frame" x="41" y="399" width="293" height="63"/>
+                                <rect key="frame" x="50.5" y="385" width="293" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="FBL-15-FeA"/>
                                     <constraint firstAttribute="width" constant="293" id="eiy-NH-0dY"/>
@@ -44,13 +44,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tu-4H-Lwn">
-                                <rect key="frame" x="51" y="408" width="78" height="17"/>
+                                <rect key="frame" x="61" y="394" width="77.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="buO-vZ-Mez" customClass="UsernameTextField" customModule="UNCC_YesPlus" customModuleProvider="target">
-                                <rect key="frame" x="41" y="302" width="293" height="63"/>
+                                <rect key="frame" x="50.5" y="302" width="293" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="9b9-aZ-E8m"/>
                                     <constraint firstAttribute="height" constant="63" id="McY-6d-Y2g"/>
@@ -65,11 +65,36 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bm6-qS-C4g">
-                                <rect key="frame" x="52" y="311" width="77" height="17"/>
+                                <rect key="frame" x="62" y="311" width="76.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aX2-fc-df9">
+                                <rect key="frame" x="57" y="486" width="280" height="63"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Naw-qa-kJ5" customClass="LoginAndSignUpButton" customModule="UNCC_YesPlus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="63"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="026-gq-Ict"/>
+                                            <constraint firstAttribute="height" constant="63" id="KDJ-8v-HOe"/>
+                                        </constraints>
+                                        <state key="normal" title="Sign Up?">
+                                            <color key="titleColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBr-Mf-cHF" customClass="LoginAndSignUpButton" customModule="UNCC_YesPlus" customModuleProvider="target">
+                                        <rect key="frame" x="150" y="0.0" width="130" height="63"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="CTM-cH-YcO"/>
+                                            <constraint firstAttribute="height" constant="63" id="QhZ-pa-khK"/>
+                                        </constraints>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.16470588235294117" green="0.16862745098039217" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -77,10 +102,15 @@
                             <constraint firstItem="buO-vZ-Mez" firstAttribute="leading" secondItem="bm6-qS-C4g" secondAttribute="trailing" constant="-88" id="7tA-1b-yVO"/>
                             <constraint firstItem="EtR-l5-dqc" firstAttribute="leading" secondItem="9tu-4H-Lwn" secondAttribute="trailing" constant="-9" id="Cfi-rX-wRi"/>
                             <constraint firstItem="EtR-l5-dqc" firstAttribute="centerX" secondItem="Qaw-rm-GQs" secondAttribute="centerX" id="Dkl-lr-PmP"/>
+                            <constraint firstItem="aX2-fc-df9" firstAttribute="leading" secondItem="Qaw-rm-GQs" secondAttribute="leading" constant="57" id="FaC-Of-6gK"/>
                             <constraint firstItem="j55-ZO-8Q1" firstAttribute="top" secondItem="9tu-4H-Lwn" secondAttribute="bottom" constant="-26" id="Gdh-pC-dqW"/>
-                            <constraint firstItem="j55-ZO-8Q1" firstAttribute="top" secondItem="buO-vZ-Mez" secondAttribute="bottom" constant="34" id="Nl9-6X-Nc0"/>
+                            <constraint firstItem="bm6-qS-C4g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i3V-mn-yOj" secondAttribute="leading" constant="20" symbolic="YES" id="Hsz-ht-Uwy"/>
+                            <constraint firstItem="aX2-fc-df9" firstAttribute="centerX" secondItem="Qaw-rm-GQs" secondAttribute="centerX" id="IYU-yd-IoB"/>
+                            <constraint firstItem="j55-ZO-8Q1" firstAttribute="top" secondItem="buO-vZ-Mez" secondAttribute="bottom" constant="20" id="Nl9-6X-Nc0"/>
                             <constraint firstItem="EtR-l5-dqc" firstAttribute="leading" secondItem="bm6-qS-C4g" secondAttribute="trailing" constant="-9" id="UCO-t3-jz4"/>
                             <constraint firstItem="buO-vZ-Mez" firstAttribute="centerX" secondItem="Qaw-rm-GQs" secondAttribute="centerX" id="Zzm-ig-PPz"/>
+                            <constraint firstItem="aX2-fc-df9" firstAttribute="top" secondItem="j55-ZO-8Q1" secondAttribute="bottom" constant="38" id="bXG-js-acv"/>
+                            <constraint firstItem="9tu-4H-Lwn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i3V-mn-yOj" secondAttribute="leading" constant="20" symbolic="YES" id="dIg-5U-a5A"/>
                             <constraint firstItem="Win-Q6-uiV" firstAttribute="top" secondItem="Qaw-rm-GQs" secondAttribute="top" constant="10" id="iqt-Fl-kAk"/>
                             <constraint firstItem="EtR-l5-dqc" firstAttribute="top" secondItem="Win-Q6-uiV" secondAttribute="bottom" constant="8" id="isa-i0-iLU"/>
                             <constraint firstItem="Win-Q6-uiV" firstAttribute="centerX" secondItem="Qaw-rm-GQs" secondAttribute="centerX" id="rCc-tj-kXr"/>
