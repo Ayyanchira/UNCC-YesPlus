@@ -28,9 +28,33 @@
                                     <constraint firstAttribute="height" constant="135" id="aqa-5b-Lh1"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="buO-vZ-Mez" customClass="UsernameTextField" customModule="UNCC_YesPlus" customModuleProvider="target">
-                                <rect key="frame" x="30" y="308" width="314" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j55-ZO-8Q1" customClass="UsernameTextField" customModule="UNCC_YesPlus" customModuleProvider="target">
+                                <rect key="frame" x="41" y="399" width="293" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="FBL-15-FeA"/>
+                                    <constraint firstAttribute="width" constant="293" id="eiy-NH-0dY"/>
+                                </constraints>
+                                <color key="textColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath=" _placeholderLabel.textColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tu-4H-Lwn">
+                                <rect key="frame" x="51" y="408" width="78" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="buO-vZ-Mez" customClass="UsernameTextField" customModule="UNCC_YesPlus" customModuleProvider="target">
+                                <rect key="frame" x="41" y="302" width="293" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="293" id="9b9-aZ-E8m"/>
+                                    <constraint firstAttribute="height" constant="63" id="McY-6d-Y2g"/>
+                                </constraints>
                                 <color key="textColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -40,9 +64,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USERNAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bm6-qS-C4g">
-                                <rect key="frame" x="41" y="317" width="77" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bm6-qS-C4g">
+                                <rect key="frame" x="52" y="311" width="77" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -50,10 +73,20 @@
                         </subviews>
                         <color key="backgroundColor" red="0.16470588235294117" green="0.16862745098039217" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="j55-ZO-8Q1" firstAttribute="centerX" secondItem="Qaw-rm-GQs" secondAttribute="centerX" id="0Um-4t-2Kn"/>
+                            <constraint firstItem="buO-vZ-Mez" firstAttribute="leading" secondItem="bm6-qS-C4g" secondAttribute="trailing" constant="-88" id="7tA-1b-yVO"/>
+                            <constraint firstItem="EtR-l5-dqc" firstAttribute="leading" secondItem="9tu-4H-Lwn" secondAttribute="trailing" constant="-9" id="Cfi-rX-wRi"/>
                             <constraint firstItem="EtR-l5-dqc" firstAttribute="centerX" secondItem="Qaw-rm-GQs" secondAttribute="centerX" id="Dkl-lr-PmP"/>
+                            <constraint firstItem="j55-ZO-8Q1" firstAttribute="top" secondItem="9tu-4H-Lwn" secondAttribute="bottom" constant="-26" id="Gdh-pC-dqW"/>
+                            <constraint firstItem="j55-ZO-8Q1" firstAttribute="top" secondItem="buO-vZ-Mez" secondAttribute="bottom" constant="34" id="Nl9-6X-Nc0"/>
+                            <constraint firstItem="EtR-l5-dqc" firstAttribute="leading" secondItem="bm6-qS-C4g" secondAttribute="trailing" constant="-9" id="UCO-t3-jz4"/>
+                            <constraint firstItem="buO-vZ-Mez" firstAttribute="centerX" secondItem="Qaw-rm-GQs" secondAttribute="centerX" id="Zzm-ig-PPz"/>
                             <constraint firstItem="Win-Q6-uiV" firstAttribute="top" secondItem="Qaw-rm-GQs" secondAttribute="top" constant="10" id="iqt-Fl-kAk"/>
                             <constraint firstItem="EtR-l5-dqc" firstAttribute="top" secondItem="Win-Q6-uiV" secondAttribute="bottom" constant="8" id="isa-i0-iLU"/>
                             <constraint firstItem="Win-Q6-uiV" firstAttribute="centerX" secondItem="Qaw-rm-GQs" secondAttribute="centerX" id="rCc-tj-kXr"/>
+                            <constraint firstItem="buO-vZ-Mez" firstAttribute="top" secondItem="EtR-l5-dqc" secondAttribute="bottom" constant="75" id="v8P-D5-dr8"/>
+                            <constraint firstItem="buO-vZ-Mez" firstAttribute="top" secondItem="bm6-qS-C4g" secondAttribute="bottom" constant="-26" id="vLf-yy-LmD"/>
+                            <constraint firstItem="j55-ZO-8Q1" firstAttribute="leading" secondItem="9tu-4H-Lwn" secondAttribute="trailing" constant="-88" id="w8r-Rh-rSH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qaw-rm-GQs"/>
                     </view>

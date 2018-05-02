@@ -18,7 +18,7 @@ class UsernameTextField: UITextField {
     }
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.insetBy(dx: 10, dy: 12)
+        return bounds.insetBy(dx: 10, dy: 15)
     }
     
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
