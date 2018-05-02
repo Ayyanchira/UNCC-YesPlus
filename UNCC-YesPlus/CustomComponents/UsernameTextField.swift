@@ -13,8 +13,9 @@ class UsernameTextField: UITextField {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.layer.borderColor = UIColor(displayP3Red: 151, green: 151, blue: 151, alpha: 100).cgColor
+        self.layer.borderColor = UIColor(displayP3Red: 151/255, green: 151/255, blue: 151/255, alpha: 100/100).cgColor
         self.layer.borderWidth = 2
+        
     }
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {
