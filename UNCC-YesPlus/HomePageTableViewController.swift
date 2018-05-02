@@ -12,7 +12,7 @@ class HomePageTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = #colorLiteral(red: 0.2290557027, green: 0.2291006446, blue: 0.2290498018, alpha: 1)
+//        self.view.backgroundColor = #colorLiteral(red: 0.2290557027, green: 0.2291006446, blue: 0.2290498018, alpha: 1)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -48,7 +48,9 @@ class HomePageTableViewController: UITableViewController {
         return cell
     }
 
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Selected row is \(indexPath.row)")
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
