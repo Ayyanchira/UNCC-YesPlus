@@ -41,15 +41,13 @@ class HomePageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCustomCell", for: indexPath) as! EventCustomCellTableViewCell
-    
-        print("Is this even gettign called")
         // Configure the cell...
 
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected row is \(indexPath.row)")
+        
     }
     /*
     // Override to support conditional editing of the table view.
