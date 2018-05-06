@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+@IBDesignable
 class LoginAndSignUpButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
