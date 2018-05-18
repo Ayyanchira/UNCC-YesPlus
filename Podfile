@@ -8,5 +8,7 @@ target 'UNCC-YesPlus' do
   # Pods for UNCC-YesPlus
 
 	pod 'Firebase/Core'
+	pod 'Firebase/Auth'
+	pod 'GoogleSignIn'
 
 end

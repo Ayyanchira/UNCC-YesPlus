@@ -20,6 +20,8 @@
 		73EDF26C2099E6D0003C0215 /* HomePageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EDF26B2099E6D0003C0215 /* HomePageTableViewController.swift */; };
 		73EDF26E2099EB4B003C0215 /* EventCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EDF26D2099EB4B003C0215 /* EventCellView.swift */; };
 		73FC8A66209F9B6200DED24D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73FC8A65209F9B6200DED24D /* GoogleService-Info.plist */; };
+		73FC8A68209FAB0F00DED24D /* ManualRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FC8A67209FAB0F00DED24D /* ManualRegisterViewController.swift */; };
+		73FC8A6A209FADC900DED24D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FC8A69209FADC900DED24D /* LoginViewController.swift */; };
 		99886EEC680234DDCC8FD1CD /* Pods_UNCC_YesPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667B61BDD29AD4C9F0345A01 /* Pods_UNCC_YesPlus.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		73EDF26B2099E6D0003C0215 /* HomePageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewController.swift; sourceTree = "<group>"; };
 		73EDF26D2099EB4B003C0215 /* EventCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellView.swift; sourceTree = "<group>"; };
 		73FC8A65209F9B6200DED24D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		73FC8A67209FAB0F00DED24D /* ManualRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualRegisterViewController.swift; sourceTree = "<group>"; };
+		73FC8A69209FADC900DED24D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C25F0A26D4998BB5E73FB21E /* Pods-UNCC-YesPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNCC-YesPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-UNCC-YesPlus/Pods-UNCC-YesPlus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,19 +89,29 @@
 		7314F7C3205C6A2A00D8590C /* UNCC-YesPlus */ = {
 			isa = PBXGroup;
 			children = (
+				7335133D20ACFB4B00D92528 /* ViewControllers */,
 				739A84CA20997AD300FB60A0 /* CustomComponents */,
 				7314F7C4205C6A2A00D8590C /* AppDelegate.swift */,
 				7314F7C8205C6A2A00D8590C /* Main.storyboard */,
 				7314F7CB205C6A2A00D8590C /* Assets.xcassets */,
 				7314F7CD205C6A2B00D8590C /* LaunchScreen.storyboard */,
 				7314F7D0205C6A2B00D8590C /* Info.plist */,
-				7314F7D6205C731000D8590C /* LaunchScreenViewController.swift */,
-				7314F7D8205C746A00D8590C /* HomeViewController.swift */,
 				731250712063E98A00680795 /* CustomHomeTableViewCell.swift */,
 				73FC8A65209F9B6200DED24D /* GoogleService-Info.plist */,
-				73EDF26B2099E6D0003C0215 /* HomePageTableViewController.swift */,
 			);
 			path = "UNCC-YesPlus";
+			sourceTree = "<group>";
+		};
+		7335133D20ACFB4B00D92528 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7314F7D6205C731000D8590C /* LaunchScreenViewController.swift */,
+				7314F7D8205C746A00D8590C /* HomeViewController.swift */,
+				73EDF26B2099E6D0003C0215 /* HomePageTableViewController.swift */,
+				73FC8A67209FAB0F00DED24D /* ManualRegisterViewController.swift */,
+				73FC8A69209FADC900DED24D /* LoginViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		739A84CA20997AD300FB60A0 /* CustomComponents */ = {
@@ -199,11 +213,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-UNCC-YesPlus/Pods-UNCC-YesPlus-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -218,9 +236,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UNCC-YesPlus/Pods-UNCC-YesPlus-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -253,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7314F7D7205C731000D8590C /* LaunchScreenViewController.swift in Sources */,
+				73FC8A68209FAB0F00DED24D /* ManualRegisterViewController.swift in Sources */,
 				73EDF26E2099EB4B003C0215 /* EventCellView.swift in Sources */,
 				7314F7C5205C6A2A00D8590C /* AppDelegate.swift in Sources */,
 				739A84C920997A5E00FB60A0 /* UsernameTextField.swift in Sources */,
@@ -261,6 +283,7 @@
 				73EDF26A2099E5E7003C0215 /* EventCustomCellTableViewCell.swift in Sources */,
 				731250722063E98A00680795 /* CustomHomeTableViewCell.swift in Sources */,
 				739A84CC20998B5300FB60A0 /* LoginAndSignUpButton.swift in Sources */,
+				73FC8A6A209FADC900DED24D /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,14 +1,14 @@
 //
-//  LaunchScreenViewController.swift
+//  ManualRegisterViewController.swift
 //  UNCC-YesPlus
 //
-//  Created by Akshay Ayyanchira on 3/16/18.
+//  Created by Akshay Ayyanchira on 5/6/18.
 //  Copyright © 2018 Akshay Ayyanchira. All rights reserved.
 //
 
 import UIKit
 
-class LaunchScreenViewController: UIViewController {
+class ManualRegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,10 @@ class LaunchScreenViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func cancelButtonPressed(_ sender: LoginAndSignUpButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
