@@ -72,7 +72,7 @@
                                             <color key="titleColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <segue destination="TVy-z7-3Th" kind="presentation" id="ned-YB-VlW"/>
+                                            <segue destination="1dm-UQ-wn7" kind="presentation" modalTransitionStyle="crossDissolve" id="vgL-Q9-HMI"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBr-Mf-cHF" customClass="LoginAndSignUpButton" customModule="UNCC_YesPlus" customModuleProvider="target">
@@ -128,6 +128,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZjD-8S-i7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-15.942028985507248" y="66.032608695652172"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="OdT-Dx-UMN">
+            <objects>
+                <viewController id="1dm-UQ-wn7" customClass="SignUpViewController" customModule="UNCC_YesPlus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3WY-Rz-yad">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YesPlusImage-1" translatesAutoresizingMaskIntoConstraints="NO" id="gXe-Id-QZg">
+                                <rect key="frame" x="121.66666666666669" y="30" width="171" height="54"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gurujiImage" translatesAutoresizingMaskIntoConstraints="NO" id="ucn-cP-zq6">
+                                <rect key="frame" x="139.66666666666666" y="92" width="134.99999999999997" height="135"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="eV1-Kq-bVd"/>
+                                    <constraint firstAttribute="height" constant="135" id="spA-Vt-FSv"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IKZ-fr-dGX">
+                                <rect key="frame" x="50" y="326" width="314" height="146"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4w2-VR-2Wy" customClass="LoginAndSignUpButton" customModule="UNCC_YesPlus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="63"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="63" id="7M8-cm-gbg"/>
+                                        </constraints>
+                                        <state key="normal" title="Manual Setup">
+                                            <color key="titleColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="TVy-z7-3Th" kind="show" id="Usu-oW-afY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ie-10-PfT" customClass="LoginAndSignUpButton" customModule="UNCC_YesPlus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="83" width="314" height="63"/>
+                                        <state key="normal" title="Google Sign-In">
+                                            <color key="titleColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="TVy-z7-3Th" eventType="touchUpInside" id="aEh-1e-ga5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="2Ie-10-PfT" firstAttribute="height" secondItem="4w2-VR-2Wy" secondAttribute="height" id="SzN-Ex-5nv"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwO-VX-egF" customClass="LoginAndSignUpButton" customModule="UNCC_YesPlus" customModuleProvider="target">
+                                <rect key="frame" x="50" y="516" width="314" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="SYf-oe-18V"/>
+                                </constraints>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="1dm-UQ-wn7" eventType="touchUpInside" id="r65-BX-8uc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16470588235294117" green="0.16862745098039217" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NUr-De-H0w" firstAttribute="trailing" secondItem="IKZ-fr-dGX" secondAttribute="trailing" constant="50" id="8HN-gv-GeE"/>
+                            <constraint firstItem="hwO-VX-egF" firstAttribute="trailing" secondItem="IKZ-fr-dGX" secondAttribute="trailing" id="BEA-bW-YUu"/>
+                            <constraint firstItem="gXe-Id-QZg" firstAttribute="top" secondItem="NUr-De-H0w" secondAttribute="top" constant="10" id="GH6-m8-vab"/>
+                            <constraint firstItem="ucn-cP-zq6" firstAttribute="top" secondItem="gXe-Id-QZg" secondAttribute="bottom" constant="8" id="Nla-eV-6lh"/>
+                            <constraint firstItem="gXe-Id-QZg" firstAttribute="centerX" secondItem="NUr-De-H0w" secondAttribute="centerX" id="RAb-5j-fLi"/>
+                            <constraint firstItem="ucn-cP-zq6" firstAttribute="centerX" secondItem="gXe-Id-QZg" secondAttribute="centerX" id="RFS-7l-bip"/>
+                            <constraint firstItem="hwO-VX-egF" firstAttribute="width" secondItem="IKZ-fr-dGX" secondAttribute="width" id="Uv9-QC-z7e"/>
+                            <constraint firstItem="IKZ-fr-dGX" firstAttribute="leading" secondItem="NUr-De-H0w" secondAttribute="leading" constant="50" id="gMG-Ic-XCG"/>
+                            <constraint firstItem="hwO-VX-egF" firstAttribute="top" secondItem="IKZ-fr-dGX" secondAttribute="bottom" constant="44" id="pfl-EX-fn0"/>
+                            <constraint firstItem="IKZ-fr-dGX" firstAttribute="top" secondItem="ucn-cP-zq6" secondAttribute="bottom" constant="99" id="qsS-HS-pIK"/>
+                            <constraint firstItem="hwO-VX-egF" firstAttribute="leading" secondItem="IKZ-fr-dGX" secondAttribute="leading" id="zD8-zi-vkK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NUr-De-H0w"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N62-cc-jty" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16" y="934"/>
         </scene>
         <!--Manual Register View Controller-->
         <scene sceneID="TT6-mG-W5c">
@@ -289,10 +370,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZfI-IB-NGx"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Eik-dr-jbI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2g-Wk-8UH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15.199999999999999" y="865.27093596059115"/>
+            <point key="canvasLocation" x="987" y="935"/>
         </scene>
         <!--Yes Plus-->
         <scene sceneID="fIg-kW-KJk">
