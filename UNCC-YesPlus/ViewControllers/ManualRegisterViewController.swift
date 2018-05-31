@@ -25,6 +25,10 @@ class ManualRegisterViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    
+    @IBAction func registerButtonPressed(_ sender: Any) {
+        
+    }
     /*
     // MARK: - Navigation
 
