@@ -25,9 +25,36 @@ class ManualRegisterViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet weak var firstnameTextField: UsernameTextField!
+    @IBOutlet weak var lastNameTextField: UsernameTextField!
+    @IBOutlet weak var birthDateTextField: UsernameTextField!
     
+    @IBOutlet weak var emailTextField: UsernameTextField!
+    @IBOutlet weak var confirmPasswordTextField: UsernameTextField!
+    
+    @IBOutlet weak var passwordTextField: UsernameTextField!
     @IBAction func registerButtonPressed(_ sender: Any) {
+        if (validateTextFields().keys.first)!{
+            print("Lets register him")
+        }else{
+            let alertVC = UIAlertController(title: "Error", message:validateTextFields().values.first , preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertVC.addAction(okButton)
+            self.present(alertVC, animated: true, completion: nil)
+        }
+    }
+    
+    func validateTextFields() -> [Bool:String] {
         
+        if (firstnameTextField.text == "") || (lastNameTextField.text == "") || (birthDateTextField.text == "") || (passwordTextField.text == "") || (confirmPasswordTextField.text == ""){
+            return [false : "Please fill alll the fields"]
+        }
+        
+        if passwordTextField.text != confirmPasswordTextField.text{
+            return [false : "Passwords do not match"]
+        }
+        
+        return [true : "Successfull"]
     }
     /*
     // MARK: - Navigation

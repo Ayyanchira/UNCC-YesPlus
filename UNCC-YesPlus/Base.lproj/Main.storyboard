@@ -397,6 +397,14 @@
                         <viewLayoutGuide key="safeArea" id="ZfI-IB-NGx"/>
                     </view>
                     <navigationItem key="navigationItem" id="Eik-dr-jbI"/>
+                    <connections>
+                        <outlet property="birthDateTextField" destination="NOU-C3-629" id="t2t-kH-mjn"/>
+                        <outlet property="confirmPasswordTextField" destination="vrC-aE-Chk" id="mwF-NF-EfV"/>
+                        <outlet property="emailTextField" destination="Gts-LG-dRn" id="azH-Fz-LzA"/>
+                        <outlet property="firstnameTextField" destination="aGB-ZG-Acj" id="brN-29-wTd"/>
+                        <outlet property="lastNameTextField" destination="oGS-mT-y7n" id="fp8-hV-bGf"/>
+                        <outlet property="passwordTextField" destination="WTv-sV-seO" id="Gmw-8A-Qwn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2g-Wk-8UH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
