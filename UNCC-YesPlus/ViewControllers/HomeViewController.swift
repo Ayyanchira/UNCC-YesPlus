@@ -9,11 +9,8 @@
 import UIKit
 import FirebaseAuth
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    @IBOutlet weak var eventTableView: UITableView!
-    @IBOutlet weak var gurujiImageView: UIImageView!
-    
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarDelegate {
+    @IBOutlet weak var eventsView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +23,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-    
     
     //PRAGMA MARK: Table view delegate methods
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,5 +39,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             print(signoutError.localizedDescription)
         }
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if(item.title == "Quotes"){
+            eventsView.isHidden = true
+        }
+        if item.title == "Events" {
+            eventsView.isHidden = false
+        }
+        if item.title == "Settings" {
+            eventsView.isHidden = true
+        }
     }
 }

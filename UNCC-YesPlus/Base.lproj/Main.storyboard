@@ -442,6 +442,9 @@
                                     </tabBarItem>
                                     <tabBarItem title="Settings" image="settingsicon" selectedImage="settingsicon" id="VP9-wH-DXH"/>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="U11-Bi-kA4" id="MKw-1B-MBS"/>
+                                </connections>
                             </tabBar>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -464,6 +467,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fPZ-8V-Stw"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="eventsView" destination="GLK-Qc-Hum" id="TGs-dq-uu9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcH-59-WN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
