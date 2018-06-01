@@ -18,9 +18,12 @@
 		739A84C920997A5E00FB60A0 /* UsernameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739A84C820997A5E00FB60A0 /* UsernameTextField.swift */; };
 		739A84CC20998B5300FB60A0 /* LoginAndSignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739A84CB20998B5300FB60A0 /* LoginAndSignUpButton.swift */; };
 		73EDF26A2099E5E7003C0215 /* EventCustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EDF2692099E5E7003C0215 /* EventCustomCellTableViewCell.swift */; };
-		73EDF26C2099E6D0003C0215 /* HomePageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EDF26B2099E6D0003C0215 /* HomePageTableViewController.swift */; };
+		73EDF26C2099E6D0003C0215 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EDF26B2099E6D0003C0215 /* EventsViewController.swift */; };
 		73EDF26E2099EB4B003C0215 /* EventCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EDF26D2099EB4B003C0215 /* EventCellView.swift */; };
 		73F295E720C09C9E007FBBA5 /* FireBaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F295E620C09C9E007FBBA5 /* FireBaseHelper.swift */; };
+		73F295E920C18C45007FBBA5 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F295E820C18C45007FBBA5 /* QuotesViewController.swift */; };
+		73F295EB20C18C52007FBBA5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F295EA20C18C52007FBBA5 /* SettingsViewController.swift */; };
+		73F295ED20C1A5A3007FBBA5 /* UniversitySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F295EC20C1A5A3007FBBA5 /* UniversitySelectionViewController.swift */; };
 		73FC8A66209F9B6200DED24D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73FC8A65209F9B6200DED24D /* GoogleService-Info.plist */; };
 		73FC8A68209FAB0F00DED24D /* ManualRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FC8A67209FAB0F00DED24D /* ManualRegisterViewController.swift */; };
 		73FC8A6A209FADC900DED24D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FC8A69209FADC900DED24D /* LoginViewController.swift */; };
@@ -43,9 +46,12 @@
 		739A84C820997A5E00FB60A0 /* UsernameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextField.swift; sourceTree = "<group>"; };
 		739A84CB20998B5300FB60A0 /* LoginAndSignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignUpButton.swift; sourceTree = "<group>"; };
 		73EDF2692099E5E7003C0215 /* EventCustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCustomCellTableViewCell.swift; sourceTree = "<group>"; };
-		73EDF26B2099E6D0003C0215 /* HomePageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewController.swift; sourceTree = "<group>"; };
+		73EDF26B2099E6D0003C0215 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		73EDF26D2099EB4B003C0215 /* EventCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellView.swift; sourceTree = "<group>"; };
 		73F295E620C09C9E007FBBA5 /* FireBaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseHelper.swift; sourceTree = "<group>"; };
+		73F295E820C18C45007FBBA5 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
+		73F295EA20C18C52007FBBA5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		73F295EC20C1A5A3007FBBA5 /* UniversitySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversitySelectionViewController.swift; sourceTree = "<group>"; };
 		73FC8A65209F9B6200DED24D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73FC8A67209FAB0F00DED24D /* ManualRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualRegisterViewController.swift; sourceTree = "<group>"; };
 		73FC8A69209FADC900DED24D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -112,10 +118,13 @@
 			children = (
 				7314F7D6205C731000D8590C /* LaunchScreenViewController.swift */,
 				7314F7D8205C746A00D8590C /* HomeViewController.swift */,
-				73EDF26B2099E6D0003C0215 /* HomePageTableViewController.swift */,
+				73EDF26B2099E6D0003C0215 /* EventsViewController.swift */,
 				73FC8A67209FAB0F00DED24D /* ManualRegisterViewController.swift */,
 				73FC8A69209FADC900DED24D /* LoginViewController.swift */,
 				733498AD20B205D200EE82FB /* SignUpViewController.swift */,
+				73F295E820C18C45007FBBA5 /* QuotesViewController.swift */,
+				73F295EA20C18C52007FBBA5 /* SettingsViewController.swift */,
+				73F295EC20C1A5A3007FBBA5 /* UniversitySelectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -295,13 +304,16 @@
 				73EDF26E2099EB4B003C0215 /* EventCellView.swift in Sources */,
 				7314F7C5205C6A2A00D8590C /* AppDelegate.swift in Sources */,
 				739A84C920997A5E00FB60A0 /* UsernameTextField.swift in Sources */,
-				73EDF26C2099E6D0003C0215 /* HomePageTableViewController.swift in Sources */,
+				73EDF26C2099E6D0003C0215 /* EventsViewController.swift in Sources */,
 				733498AE20B205D200EE82FB /* SignUpViewController.swift in Sources */,
+				73F295EB20C18C52007FBBA5 /* SettingsViewController.swift in Sources */,
+				73F295ED20C1A5A3007FBBA5 /* UniversitySelectionViewController.swift in Sources */,
 				7314F7D9205C746A00D8590C /* HomeViewController.swift in Sources */,
 				73EDF26A2099E5E7003C0215 /* EventCustomCellTableViewCell.swift in Sources */,
 				731250722063E98A00680795 /* CustomHomeTableViewCell.swift in Sources */,
 				739A84CC20998B5300FB60A0 /* LoginAndSignUpButton.swift in Sources */,
 				73FC8A6A209FADC900DED24D /* LoginViewController.swift in Sources */,
+				73F295E920C18C45007FBBA5 /* QuotesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

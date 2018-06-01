@@ -9,9 +9,10 @@
 import UIKit
 import FirebaseAuth
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarDelegate {
+class HomeViewController: UIViewController, UITabBarDelegate {
     @IBOutlet weak var eventsView: UIView!
-    
+    @IBOutlet weak var quotesView: UIView!
+    @IBOutlet weak var settingsView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         let yesplusImageView = UIImageView(image: #imageLiteral(resourceName: "YesPlusImage"), highlightedImage: #imageLiteral(resourceName: "YesPlusImage"))
@@ -19,18 +20,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.navigationItem.titleView = yesplusImageView
     }
 
-    // MARK : Table view implementation
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    //PRAGMA MARK: Table view delegate methods
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customHomeCell") as! CustomHomeTableViewCell
-        cell.thumbnail.image = #imageLiteral(resourceName: "Event")
-        return cell
-    }
-    
     @IBAction func logoutButtonPressed(_ sender: UIBarButtonItem) {
         UserDefaults.standard.removeObject(forKey: "uuid")
         do {
@@ -42,14 +31,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        eventsView.isHidden = true
+        quotesView.isHidden = true
+        settingsView.isHidden = true
         if(item.title == "Quotes"){
-            eventsView.isHidden = true
+            quotesView.isHidden = false
         }
         if item.title == "Events" {
             eventsView.isHidden = false
         }
         if item.title == "Settings" {
-            eventsView.isHidden = true
+            settingsView.isHidden = false
         }
     }
 }
