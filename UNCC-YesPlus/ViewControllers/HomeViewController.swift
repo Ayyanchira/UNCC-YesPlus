@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -19,35 +20,28 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let yesplusImageView = UIImageView(image: #imageLiteral(resourceName: "YesPlusImage"), highlightedImage: #imageLiteral(resourceName: "YesPlusImage"))
         yesplusImageView.contentMode = .scaleAspectFit
         self.navigationItem.titleView = yesplusImageView
-        
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
     // MARK : Table view implementation
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
+    
+    //PRAGMA MARK: Table view delegate methods
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customHomeCell") as! CustomHomeTableViewCell
         cell.thumbnail.image = #imageLiteral(resourceName: "Event")
         return cell
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func logoutButtonPressed(_ sender: UIBarButtonItem) {
+        UserDefaults.standard.removeObject(forKey: "uuid")
+        do {
+            try Auth.auth().signOut()
+        } catch let signoutError as NSError {
+            print(signoutError.localizedDescription)
+        }
+        self.dismiss(animated: true, completion: nil)
     }
-    */
-
 }

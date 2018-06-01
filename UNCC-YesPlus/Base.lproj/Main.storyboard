@@ -84,7 +84,7 @@
                                             <color key="titleColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <segue destination="SG5-Pt-KEo" kind="show" id="Xuo-hp-Udc"/>
+                                            <action selector="loginButtonPressed:" destination="QeC-At-G4D" eventType="touchUpInside" id="UDd-Fd-eBp"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -124,6 +124,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qaw-rm-GQs"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="buO-vZ-Mez" id="TDt-fa-MEL"/>
+                        <outlet property="passwordTextField" destination="j55-ZO-8Q1" id="1br-1h-HO8"/>
+                        <segue destination="SG5-Pt-KEo" kind="show" identifier="loginSuccessfull" id="7CA-8e-Uph"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZjD-8S-i7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -413,7 +418,7 @@
         <!--Yes Plus-->
         <scene sceneID="fIg-kW-KJk">
             <objects>
-                <viewController id="U11-Bi-kA4" sceneMemberID="viewController">
+                <viewController id="U11-Bi-kA4" customClass="HomeViewController" customModule="UNCC_YesPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="lRk-lB-dSY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -452,7 +457,11 @@
                         <viewLayoutGuide key="safeArea" id="C4c-XF-fgQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Yes Plus" id="cqu-ak-LJe">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Y6N-w8-cGZ"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Y6N-w8-cGZ">
+                            <connections>
+                                <action selector="logoutButtonPressed:" destination="U11-Bi-kA4" id="4Iq-p3-p4f"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fPZ-8V-Stw"/>
                     </navigationItem>
                 </viewController>
