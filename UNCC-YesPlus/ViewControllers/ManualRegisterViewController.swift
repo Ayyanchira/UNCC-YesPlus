@@ -27,11 +27,6 @@ class ManualRegisterViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func cancelButtonPressed(_ sender: LoginAndSignUpButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
    
     @IBAction func registerButtonPressed(_ sender: Any) {
         let validationResult = validateTextFields()

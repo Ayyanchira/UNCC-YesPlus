@@ -28,8 +28,13 @@ class UniversitySelectionViewController: UIViewController, UIPickerViewDelegate,
         return listOfUniversity.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return listOfUniversity[row]
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let universityAbbr = listOfUniversity[row]
+        
+        let title = NSAttributedString(string: universityAbbr, attributes:[
+            NSAttributedStringKey.font : UIFont(name: "Chalkduster", size: 18.0)!,
+            NSAttributedStringKey.foregroundColor : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)])
+        return title
     }
     
     

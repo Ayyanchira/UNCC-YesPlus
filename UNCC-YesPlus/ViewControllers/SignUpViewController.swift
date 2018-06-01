@@ -12,7 +12,9 @@ class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let yesplusImageView = UIImageView(image: #imageLiteral(resourceName: "YesPlusImage"), highlightedImage: #imageLiteral(resourceName: "YesPlusImage"))
+        yesplusImageView.contentMode = .scaleAspectFit
+        self.navigationItem.titleView = yesplusImageView
         // Do any additional setup after loading the view.
     }
 
