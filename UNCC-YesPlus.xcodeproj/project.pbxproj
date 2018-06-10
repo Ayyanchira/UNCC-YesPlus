@@ -43,6 +43,7 @@
 		7314F7D6205C731000D8590C /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		7314F7D8205C746A00D8590C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		733498AD20B205D200EE82FB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		73680B3E20CC707D00B23CE8 /* UNCC-YesPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "UNCC-YesPlus.entitlements"; sourceTree = "<group>"; };
 		739A84C820997A5E00FB60A0 /* UsernameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextField.swift; sourceTree = "<group>"; };
 		739A84CB20998B5300FB60A0 /* LoginAndSignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignUpButton.swift; sourceTree = "<group>"; };
 		73EDF2692099E5E7003C0215 /* EventCustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCustomCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		7314F7C3205C6A2A00D8590C /* UNCC-YesPlus */ = {
 			isa = PBXGroup;
 			children = (
+				73680B3E20CC707D00B23CE8 /* UNCC-YesPlus.entitlements */,
 				73F295E520C09B8B007FBBA5 /* Service */,
 				7335133D20ACFB4B00D92528 /* ViewControllers */,
 				739A84CA20997AD300FB60A0 /* CustomComponents */,
@@ -193,6 +195,14 @@
 					7314F7C0205C6A2A00D8590C = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -451,6 +461,7 @@
 			baseConfigurationReference = 496631A1D26EA610EA667DD0 /* Pods-UNCC-YesPlus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "UNCC-YesPlus/UNCC-YesPlus.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XU4EKNT3UT;
 				INFOPLIST_FILE = "UNCC-YesPlus/Info.plist";
@@ -467,6 +478,7 @@
 			baseConfigurationReference = C25F0A26D4998BB5E73FB21E /* Pods-UNCC-YesPlus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "UNCC-YesPlus/UNCC-YesPlus.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XU4EKNT3UT;
 				INFOPLIST_FILE = "UNCC-YesPlus/Info.plist";
