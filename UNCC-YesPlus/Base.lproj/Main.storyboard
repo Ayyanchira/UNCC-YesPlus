@@ -216,7 +216,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZh-Hq-0jB">
-                                <rect key="frame" x="-19" y="210" width="414" height="343"/>
+                                <rect key="frame" x="-19.5" y="210" width="414" height="343"/>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.92143100499999997" green="0.78799715909090906" blue="0.92144101860000005" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -234,7 +234,7 @@
                                     <color key="titleColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="TVy-z7-3Th" kind="show" id="epL-k9-x83"/>
+                                    <action selector="nextButtonPressed:" destination="ZKH-86-aTh" eventType="touchUpInside" id="SMW-8N-bQJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -251,6 +251,7 @@
                     </view>
                     <connections>
                         <outlet property="universityPickerView" destination="qZh-Hq-0jB" id="jd0-Ls-zVV"/>
+                        <segue destination="TVy-z7-3Th" kind="show" identifier="UniversitySelected" id="egJ-4W-LNT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jzc-75-mpX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -552,6 +553,21 @@
             </objects>
             <point key="canvasLocation" x="4167" y="-543"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="2k2-kM-fkE">
+            <objects>
+                <viewController id="Vpl-HH-yBs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cPI-Nv-2Lv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.16495019197463989" green="0.16769489645957947" blue="0.20000463724136353" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="avJ-dg-XfO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MAA-TW-Q7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4786" y="65"/>
+        </scene>
         <!--Events View Controller-->
         <scene sceneID="PC6-d4-b5e">
             <objects>
@@ -663,6 +679,9 @@
                             <outlet property="delegate" destination="Cfk-Jc-YBV" id="LcR-Fv-b1c"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="Vpl-HH-yBs" kind="show" id="jLc-Df-dpl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u1t-yg-fA2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,6 +12,8 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class ManualRegisterViewController: UIViewController {
+    public var university:String?
+    
     @IBOutlet weak var firstnameTextField: UsernameTextField!
     @IBOutlet weak var lastNameTextField: UsernameTextField!
     @IBOutlet weak var birthDateTextField: UsernameTextField!
@@ -21,6 +23,7 @@ class ManualRegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Selected university is \(university)")
     }
 
     override func didReceiveMemoryWarning() {

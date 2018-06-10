@@ -12,11 +12,12 @@ class UniversitySelectionViewController: UIViewController, UIPickerViewDelegate,
     @IBOutlet weak var universityPickerView: UIPickerView!
     
     var listOfUniversity = ["UNC Charlotte", "MIT", "USC","UNC Chappel hill" ]
-    
+    var selectedUniversity:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         universityPickerView.delegate = self
         universityPickerView.dataSource = self
+        selectedUniversity = listOfUniversity[0]
     }
     
     //PRAGMA MARK: Picker view delegate methods
@@ -37,5 +38,19 @@ class UniversitySelectionViewController: UIViewController, UIPickerViewDelegate,
         return title
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedUniversity = listOfUniversity[row]
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "UniversitySelected"{
+            let registrationScreen = segue.destination as! ManualRegisterViewController
+            registrationScreen.university = selectedUniversity
+        }
+    }
+    
+    @IBAction func nextButtonPressed(_ sender: LoginAndSignUpButton) {
+        self.performSegue(withIdentifier: "UniversitySelected", sender: nil)
+    }
     
 }
