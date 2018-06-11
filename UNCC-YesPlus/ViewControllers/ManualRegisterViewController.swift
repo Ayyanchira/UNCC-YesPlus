@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class ManualRegisterViewController: UIViewController {
+class ManualRegisterViewController: UIViewController, UITextFieldDelegate{
     public var university:String?
     
     @IBOutlet weak var firstnameTextField: UsernameTextField!
@@ -24,6 +24,7 @@ class ManualRegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Selected university is \(university)")
+        birthDateTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,8 +53,8 @@ class ManualRegisterViewController: UIViewController {
                         "lastName":self.lastNameTextField.text!,
                         "email":self.emailTextField.text ?? "No Email",
                         "id": user?.uid ?? "No UID",
-                        "isPushEnabled" : true,
-                        "deviceID" : 123123,
+                        "isPushEnabled" : false,
+                        "deviceID" : "",
                         "birthDate" : self.birthDateTextField.text
                         ] as [String : Any]
                     userReference.setValue(user)
@@ -78,11 +79,67 @@ class ManualRegisterViewController: UIViewController {
     //Validation of all the text fields
     func validateTextFields() -> [Bool:String] {
         if (firstnameTextField.text == "") || (lastNameTextField.text == "") || (birthDateTextField.text == "") || (passwordTextField.text == "") || (confirmPasswordTextField.text == ""){
-            return [false : "Please fill alll the fields"]
+            return [false : "Please fill all the fields"]
         }
         if passwordTextField.text != confirmPasswordTextField.text{
             return [false : "Passwords do not match"]
         }
         return [true : "Successfull"]
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.tag == 199 {
+            //show pop up with date picker
+            showBirthDatePicker()
+        }
+    }
+    
+    func showBirthDatePicker() {
+        let birthdaySelectionView = UIView(frame: CGRect(x: self.view.frame.width/10, y: self.view.frame.height/3, width: (self.view.frame.width/10) * 8, height: 200))
+        birthdaySelectionView.backgroundColor = #colorLiteral(red: 0.1643057168, green: 0.167824924, blue: 0.2028948665, alpha: 0.9470527251)
+        birthdaySelectionView.layer.cornerRadius = 15
+        birthdaySelectionView.tag = 200
+        
+        //Border between Button and picker
+        let borderSeperator = UIView(frame: CGRect(x: 0, y: birthdaySelectionView.frame.height-50, width: birthdaySelectionView.frame.width, height: 1))
+        borderSeperator.layer.borderWidth = 2.5
+        borderSeperator.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        birthdaySelectionView.addSubview(borderSeperator)
+        
+        //Birthday Picker
+        let birthdatePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: birthdaySelectionView.frame.width, height: birthdaySelectionView.frame.height-50))
+        birthdatePicker.setValue(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), forKeyPath: "textColor")
+        birthdatePicker.datePickerMode = .date
+        birthdatePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: .valueChanged)
+        
+        //Adding confimation button
+        let okButton = UIButton(frame: CGRect(x: (birthdaySelectionView.frame.width/2)-50, y: birthdaySelectionView.frame.height-35, width: 100, height: 20))
+        okButton.setTitle("OK", for: .normal)
+        okButton.addTarget(self, action: #selector(self.okButtonClicked(sender:)), for: .touchUpInside)
+        birthdaySelectionView.addSubview(okButton)
+        
+        
+        birthdaySelectionView.addSubview(birthdatePicker)
+        birthdaySelectionView.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        birthdaySelectionView.layer.borderWidth = 2.5
+        self.view.addSubview(birthdaySelectionView)
+    }
+    
+    @objc func datePickerValueChanged(sender: UIDatePicker) {
+        let date = sender.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        self.birthDateTextField.text = dateFormatter.string(from: date)
+    }
+    
+    @objc func okButtonClicked(sender: UIButton!) {
+        let subviewCollection = self.view.subviews
+        for subview in subviewCollection{
+            print("subview tag is \(subview.tag)")
+            if subview.tag == 200{
+                subview.removeFromSuperview()
+            }
+        }
+        emailTextField.becomeFirstResponder()
     }
 }
