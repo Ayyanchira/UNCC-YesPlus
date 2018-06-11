@@ -135,7 +135,6 @@ class ManualRegisterViewController: UIViewController, UITextFieldDelegate{
     @objc func okButtonClicked(sender: UIButton!) {
         let subviewCollection = self.view.subviews
         for subview in subviewCollection{
-            print("subview tag is \(subview.tag)")
             if subview.tag == 200{
                 subview.removeFromSuperview()
             }
