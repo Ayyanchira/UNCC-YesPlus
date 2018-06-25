@@ -95,6 +95,7 @@ class ManualRegisterViewController: UIViewController, UITextFieldDelegate{
     }
     
     func showBirthDatePicker() {
+        
         let birthdaySelectionView = UIView(frame: CGRect(x: self.view.frame.width/10, y: self.view.frame.height/3, width: (self.view.frame.width/10) * 8, height: 200))
         birthdaySelectionView.backgroundColor = #colorLiteral(red: 0.1643057168, green: 0.167824924, blue: 0.2028948665, alpha: 0.9470527251)
         birthdaySelectionView.layer.cornerRadius = 15
@@ -123,6 +124,11 @@ class ManualRegisterViewController: UIViewController, UITextFieldDelegate{
         birthdaySelectionView.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         birthdaySelectionView.layer.borderWidth = 2.5
         self.view.addSubview(birthdaySelectionView)
+        
+        DispatchQueue.main.async {
+            self.birthDateTextField.resignFirstResponder()
+        }
+        
     }
     
     @objc func datePickerValueChanged(sender: UIDatePicker) {
