@@ -96,34 +96,34 @@ class ManualRegisterViewController: UIViewController, UITextFieldDelegate{
     
     func showBirthDatePicker() {
         
-        let birthdaySelectionView = UIView(frame: CGRect(x: self.view.frame.width/10, y: self.view.frame.height/3, width: (self.view.frame.width/10) * 8, height: 200))
-        birthdaySelectionView.backgroundColor = #colorLiteral(red: 0.1643057168, green: 0.167824924, blue: 0.2028948665, alpha: 0.9470527251)
-        birthdaySelectionView.layer.cornerRadius = 15
-        birthdaySelectionView.tag = 200
+        let birthdateSelectorView = UIView(frame: CGRect(x: self.view.frame.width/10, y: self.view.frame.height/3, width: (self.view.frame.width/10) * 8, height: 200))
+        birthdateSelectorView.backgroundColor = #colorLiteral(red: 0.1643057168, green: 0.167824924, blue: 0.2028948665, alpha: 0.9470527251)
+        birthdateSelectorView.layer.cornerRadius = 15
+        birthdateSelectorView.tag = 200
         
         //Border between Button and picker
-        let borderSeperator = UIView(frame: CGRect(x: 0, y: birthdaySelectionView.frame.height-50, width: birthdaySelectionView.frame.width, height: 1))
+        let borderSeperator = UIView(frame: CGRect(x: 0, y: birthdateSelectorView.frame.height-50, width: birthdateSelectorView.frame.width, height: 1))
         borderSeperator.layer.borderWidth = 2.5
         borderSeperator.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        birthdaySelectionView.addSubview(borderSeperator)
+        birthdateSelectorView.addSubview(borderSeperator)
         
         //Birthday Picker
-        let birthdatePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: birthdaySelectionView.frame.width, height: birthdaySelectionView.frame.height-50))
+        let birthdatePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: birthdateSelectorView.frame.width, height: birthdateSelectorView.frame.height-50))
         birthdatePicker.setValue(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), forKeyPath: "textColor")
         birthdatePicker.datePickerMode = .date
         birthdatePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: .valueChanged)
         
         //Adding confimation button
-        let okButton = UIButton(frame: CGRect(x: (birthdaySelectionView.frame.width/2)-50, y: birthdaySelectionView.frame.height-35, width: 100, height: 20))
+        let okButton = UIButton(frame: CGRect(x: (birthdateSelectorView.frame.width/2)-50, y: birthdateSelectorView.frame.height-35, width: 100, height: 20))
         okButton.setTitle("OK", for: .normal)
         okButton.addTarget(self, action: #selector(self.okButtonClicked(sender:)), for: .touchUpInside)
-        birthdaySelectionView.addSubview(okButton)
+        birthdateSelectorView.addSubview(okButton)
         
         
-        birthdaySelectionView.addSubview(birthdatePicker)
-        birthdaySelectionView.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        birthdaySelectionView.layer.borderWidth = 2.5
-        self.view.addSubview(birthdaySelectionView)
+        birthdateSelectorView.addSubview(birthdatePicker)
+        birthdateSelectorView.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        birthdateSelectorView.layer.borderWidth = 2.5
+        self.view.addSubview(birthdateSelectorView)
         
         DispatchQueue.main.async {
             self.birthDateTextField.resignFirstResponder()
