@@ -12,6 +12,8 @@ class EventsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Enabling notification listeners
+        NotificationCenter.default.addObserver(self, selector: #selector(navigateToNewEventView), name: .events, object: nil)
 //        self.view.backgroundColor = #colorLiteral(red: 0.2290557027, green: 0.2291006446, blue: 0.2290498018, alpha: 1)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -94,4 +96,9 @@ class EventsViewController: UITableViewController {
     }
     */
 
+    @objc func navigateToNewEventView() {
+        performSegue(withIdentifier: "NewEvent", sender: nil)
+    }
 }
+
+
