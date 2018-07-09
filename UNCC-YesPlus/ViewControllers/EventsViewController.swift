@@ -7,94 +7,72 @@
 //
 
 import UIKit
+import Firebase
 
 class EventsViewController: UITableViewController {
 
+    let rootref = Database.database().reference()
+    var events:[Event] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //Enabling notification listeners
         NotificationCenter.default.addObserver(self, selector: #selector(navigateToNewEventView), name: .events, object: nil)
-//        self.view.backgroundColor = #colorLiteral(red: 0.2290557027, green: 0.2291006446, blue: 0.2290498018, alpha: 1)
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        //Fetch Events from firebase
+        fetchEvents()
     }
+    
+    
+    
+    // MARK: - Firebase Calls
+    func fetchEvents() {
+        let dataref = self.rootref.child("allEvents")
+        dataref.observeSingleEvent(of: DataEventType.value) { (snapshot) in
+            print("Number of objects found : \(snapshot.childrenCount)")
+            if let values = snapshot.value as? NSDictionary{
+                self.events.removeAll()
+                for key in values.allKeys{
+                    let eventObject = values[key] as? [String:Any]
+                    let eventKey = eventObject!["eId"] as! String
+                    let eventTitle = eventObject!["eTitle"] as! String
+                    let fromDate = eventObject!["eDate"] as! String
+                    let fromTime = eventObject!["eStartTime"] as! String
+                    let toDate = eventObject!["eDate"] as! String
+                    let toTime = eventObject!["eEndTime"] as! String
+                    let location = eventObject!["eDescription"] as! String
+                    let university = eventObject!["eUniversity"] as! String
+                    let eventDescription = eventObject!["eDescription"] as! String
+                    let event = Event(eventKey: eventKey, title: eventTitle, eventDescription: eventDescription, fromDate: fromDate, fromTime: fromTime, toDate: toDate, toTime: toTime, location: location, university: university)
+                    self.events.append(event)
+                }
+            }
+            self.tableView.reloadData()
+        }
+    }
+    
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return events.count
     }
 
-    
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCustomCell", for: indexPath) as! EventCustomCellTableViewCell
         // Configure the cell...
-
+        cell.eventTitle.text = events[indexPath.row].title
+        cell.eventDescription.text = events[indexPath.row].eventDescription
+        cell.eventDate.text = events[indexPath.row].fromDate
+        cell.eventDuration.text = "From \(events[indexPath.row].fromTime) to \(events[indexPath.row].toTime)"
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @objc func navigateToNewEventView() {
         performSegue(withIdentifier: "NewEvent", sender: nil)

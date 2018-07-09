@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -542,21 +543,69 @@
                     <view key="view" contentMode="scaleToFill" id="sYt-CN-NRl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jpJ-N2-9QO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="quoteCell" rowHeight="208" id="xey-vW-wKP" customClass="QuoteTableViewCell" customModule="UNCC_YesPlus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="208"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xey-vW-wKP" id="tkT-CR-9Ke">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="207.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" text="Old is gold" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pae-Ef-f9l">
+                                                    <rect key="frame" x="15" y="11" width="345" height="150"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Sri Sri Ravi Shankar" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ylj-Cn-Z5C">
+                                                    <rect key="frame" x="180" y="169" width="180" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="180" id="7re-mH-Gpe"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pae-Ef-f9l" firstAttribute="leading" secondItem="tkT-CR-9Ke" secondAttribute="leadingMargin" id="EJN-VD-X5z"/>
+                                                <constraint firstItem="pae-Ef-f9l" firstAttribute="top" secondItem="tkT-CR-9Ke" secondAttribute="topMargin" id="U41-pg-N6e"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Ylj-Cn-Z5C" secondAttribute="bottom" constant="7" id="dyH-Ey-hjh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="pae-Ef-f9l" secondAttribute="bottom" constant="36" id="kHh-Rm-FL9"/>
+                                                <constraint firstItem="Ylj-Cn-Z5C" firstAttribute="top" secondItem="pae-Ef-f9l" secondAttribute="bottom" constant="8" id="nk9-ho-Y3D"/>
+                                                <constraint firstItem="pae-Ef-f9l" firstAttribute="trailing" secondItem="tkT-CR-9Ke" secondAttribute="trailingMargin" id="uKb-hS-mKY"/>
+                                                <constraint firstItem="Ylj-Cn-Z5C" firstAttribute="trailing" secondItem="tkT-CR-9Ke" secondAttribute="trailingMargin" id="yxO-cF-tGs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorTextLabel" destination="Ylj-Cn-Z5C" id="5ry-6x-Oc1"/>
+                                            <outlet property="quoteTextView" destination="pae-Ef-f9l" id="j27-SL-f6J"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="jY4-d8-seO" id="0kt-N9-34r"/>
+                                    <outlet property="delegate" destination="jY4-d8-seO" id="EZN-JH-aAk"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.16470588235294117" green="0.16862745098039217" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jpJ-N2-9QO" firstAttribute="bottom" secondItem="RSf-dl-IL1" secondAttribute="bottom" id="6lE-mk-1Al"/>
+                            <constraint firstItem="jpJ-N2-9QO" firstAttribute="top" secondItem="sYt-CN-NRl" secondAttribute="top" id="DaG-TQ-ZlX"/>
+                            <constraint firstItem="jpJ-N2-9QO" firstAttribute="leading" secondItem="RSf-dl-IL1" secondAttribute="leading" id="V3K-Kb-2TU"/>
+                            <constraint firstItem="jpJ-N2-9QO" firstAttribute="trailing" secondItem="RSf-dl-IL1" secondAttribute="trailing" id="dW8-ca-ooQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RSf-dl-IL1"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SuU-Xu-2ba" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3280" y="-602"/>
-        </scene>
-        <!--Page View Controller-->
-        <scene sceneID="yub-r5-1TO">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="0XO-or-VTc" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nw0-E9-9g8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4167" y="-543"/>
+            <point key="canvasLocation" x="3279.1999999999998" y="-602.69865067466276"/>
         </scene>
         <!--New Event View Controller-->
         <scene sceneID="2k2-kM-fkE">
@@ -832,6 +881,9 @@
                     </view>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
+                        <outlet property="eventDescriptionTextView" destination="uPQ-BH-hme" id="ltn-rc-fcb"/>
+                        <outlet property="eventTitleTextField" destination="fHJ-Sb-qwy" id="g9k-If-tPb"/>
+                        <outlet property="locationTextField" destination="6Ie-ln-AJc" id="hak-qA-HDV"/>
                         <outlet property="saveButton" destination="Hm6-00-HQf" id="0aS-Lk-R44"/>
                         <outletCollection property="fromToButtons" destination="2HC-s5-41I" collectionClass="NSMutableArray" id="i44-sM-dXe"/>
                         <outletCollection property="fromToButtons" destination="9nR-sc-pE0" collectionClass="NSMutableArray" id="Kgr-x1-WfN"/>
@@ -841,7 +893,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAA-TW-Q7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5229.6000000000004" y="63.868065967016499"/>
+            <point key="canvasLocation" x="5228" y="-304"/>
         </scene>
         <!--Events View Controller-->
         <scene sceneID="PC6-d4-b5e">
@@ -945,7 +997,10 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.16470588235294117" green="0.16862745098039217" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <outlet property="eventDate" destination="0pw-ut-e9u" id="2pX-M6-aey"/>
                                     <outlet property="eventDescription" destination="AAk-SW-IQe" id="tkG-ee-dER"/>
+                                    <outlet property="eventDuration" destination="ULc-gu-L8m" id="ShY-s8-q7J"/>
+                                    <outlet property="eventTitle" destination="vQQ-6p-Ij4" id="s19-lK-D35"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1031,6 +1086,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAx-NZ-aGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-17.39130434782609" y="933.42391304347836"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2vz-7b-92K">
+            <objects>
+                <viewController id="Gau-3K-hJY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="no9-yg-oiM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yqC-lY-Cpb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T1b-Ti-rW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="545" y="-725"/>
         </scene>
     </scenes>
     <resources>

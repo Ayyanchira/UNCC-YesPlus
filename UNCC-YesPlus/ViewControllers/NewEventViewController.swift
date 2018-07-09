@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class NewEventViewController: UIViewController {
 
+    @IBOutlet weak var eventTitleTextField: UITextField!
+    @IBOutlet weak var eventDescriptionTextView: UITextView!
     @IBOutlet var fromToButtons: [UIButton]!
+    @IBOutlet weak var locationTextField: UITextField!
+    let rootref = Database.database().reference()
     var currentButtonSelected:UIButton?
     
     @IBOutlet weak var saveButton: LoginAndSignUpButton!
@@ -142,6 +147,48 @@ class NewEventViewController: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         //Perform basic validation and then save to firebase
+        var fromDate = ""
+        var toDate:String = ""
+        var fromTime:String = ""
+        var toTime:String = ""
+        for button in fromToButtons{
+            switch button.tag{
+            case 1:
+                fromDate = (button.titleLabel?.text)!
+                
+            case 2:
+                toDate = (button.titleLabel?.text)!
+                
+            case 3:
+                fromTime = (button.titleLabel?.text)!
+                
+            case 4:
+                toTime = (button.titleLabel?.text)!
+                
+            default:
+                print("something went wrong")
+            }
+        }
+        
+        let eventReference = rootref.child("allEvents").childByAutoId()
+        let eventObject = [
+            "eTitle" : "\(eventTitleTextField.text ?? "Some Title")",
+            "eDescription" : eventDescriptionTextView.text,
+            "eDate" : fromDate,
+            "eToDate" : toDate,
+            "eId": eventReference.key,
+            "eStartTime" : fromTime,
+            "eEndTime" : toTime,
+            "eUniversity" : "UNC Charlotte"
+            ] as [String : Any]
+
+        eventReference.setValue(eventObject) { (error, dbRef) in
+            if error == nil{
+                self.navigationController?.popViewController(animated: true)
+            }else{
+                print("Something went wrong while storing to firebase...")
+            }
+        }
     }
     
 }
