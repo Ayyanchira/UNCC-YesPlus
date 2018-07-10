@@ -26,16 +26,6 @@ class HomeViewController: UIViewController, UITabBarDelegate {
         tabNavigation.selectedItem = tabNavigation.items?.first
     }
 
-    @IBAction func logoutButtonPressed(_ sender: UIBarButtonItem) {
-        UserDefaults.standard.removeObject(forKey: "uuid")
-        do {
-            try Auth.auth().signOut()
-        } catch let signoutError as NSError {
-            print(signoutError.localizedDescription)
-        }
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         eventsView.isHidden = true
         quotesView.isHidden = true

@@ -514,11 +514,6 @@
                         <viewLayoutGuide key="safeArea" id="C4c-XF-fgQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Yes Plus" id="cqu-ak-LJe">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Y6N-w8-cGZ">
-                            <connections>
-                                <action selector="logoutButtonPressed:" destination="U11-Bi-kA4" id="4Iq-p3-p4f"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fPZ-8V-Stw">
                             <connections>
                                 <action selector="addButtonPressed:" destination="U11-Bi-kA4" id="ut1-NZ-lAm"/>
@@ -1128,6 +1123,39 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ItC-6G-6yF">
                                 <rect key="frame" x="0.0" y="20" width="375" height="534"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.16862745100000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="settingCell" rowHeight="83" id="KJ7-MU-kmY" customClass="SettingsTableViewCell" customModule="UNCC_YesPlus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="83"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KJ7-MU-kmY" id="sl5-rV-JPH">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="82.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWE-B4-ZRq">
+                                                    <rect key="frame" x="30" y="31" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sUr-3N-84F">
+                                                    <rect key="frame" x="309" y="26" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sUr-3N-84F" firstAttribute="top" secondItem="sl5-rV-JPH" secondAttribute="topMargin" constant="15" id="7Ed-i4-FNY"/>
+                                                <constraint firstItem="pWE-B4-ZRq" firstAttribute="leading" secondItem="sl5-rV-JPH" secondAttribute="leadingMargin" constant="15" id="JTD-z0-Tfh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="sUr-3N-84F" secondAttribute="bottom" constant="15" id="JYs-54-5Gk"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="sUr-3N-84F" secondAttribute="trailing" constant="2" id="Olv-sA-lvN"/>
+                                                <constraint firstItem="pWE-B4-ZRq" firstAttribute="centerY" secondItem="sl5-rV-JPH" secondAttribute="centerY" id="xh6-Xi-HdG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.16470588235294117" green="0.16862745098039217" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="settingMenuLabel" destination="pWE-B4-ZRq" id="xcS-4h-fpl"/>
+                                            <outlet property="settingSwitch" destination="sUr-3N-84F" id="drN-Qc-f3e"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="4UB-LN-2bX" id="Nk9-dF-w9T"/>
                                     <outlet property="delegate" destination="4UB-LN-2bX" id="7bJ-zd-wCa"/>
@@ -1149,7 +1177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l09-g6-PVy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4186.9565217391309" y="771.60326086956525"/>
+            <point key="canvasLocation" x="4186.3999999999996" y="770.91454272863575"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RbY-Qz-oxB">
