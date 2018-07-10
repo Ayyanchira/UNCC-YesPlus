@@ -39,7 +39,7 @@ class NewQuoteViewController: UIViewController {
             let alertController = UIAlertController(title: "Empty Fields", message: "Please enter quote and author name before saving.", preferredStyle: UIAlertControllerStyle.alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(okAction)
-            self.show(alertController, sender: nil)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
     
