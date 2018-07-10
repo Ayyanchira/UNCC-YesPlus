@@ -7,30 +7,57 @@
 //
 
 import UIKit
+import Firebase
 
 class QuotesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let rootReference = Database.database().reference()
+    var quotes:[Quote] = []
     
-
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        NotificationCenter.default.addObserver(self, selector: #selector(navigateToNewQuoteView), name: .quotes, object: nil)
+        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        fetchQuotes()
+    }
+
     //MARK:- Table view delegate methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return quotes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "quoteCell") as! QuoteTableViewCell
-        cell.quoteTextView.text = "Hello everyone. Chai Peelo"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "quoteCell") as! QuoteTableViewCell
+        cell.quoteTextView.text = quotes[indexPath.row].quote
+        cell.authorTextLabel.text = quotes[indexPath.row].author
         return cell
+    }
+    
+    @objc func navigateToNewQuoteView() {
+        performSegue(withIdentifier: "newQuote", sender: nil)
+    }
+    
+    func fetchQuotes() {
+        let quoteReference = rootReference.child("allQuotes")
+        quoteReference.observeSingleEvent(of: .value) { (snapshot) in
+            if let values = snapshot.value as? NSDictionary{
+                self.quotes.removeAll()
+                for key in values.allKeys{
+                    let quoteObject = values[key] as? [String:Any]
+                    let quoteString = quoteObject!["quote"] as! String
+                    let author = quoteObject!["author"] as! String
+                    let key = quoteObject!["key"] as! String
+                    
+                    let quote = Quote(quote: quoteString, author: author, key:key)
+                    self.quotes.append(quote)
+                }
+            }
+            self.tableView.reloadData()
+        }
+        
     }
 }

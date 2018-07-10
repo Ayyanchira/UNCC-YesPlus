@@ -18,6 +18,14 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //check if user is logged in
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if Auth.auth().currentUser != nil{
+            performSegue(withIdentifier: "loginSuccessfull", sender: nil)
+        }
     }
     
     @IBAction func loginButtonPressed(_ sender: LoginAndSignUpButton) {
