@@ -21,7 +21,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     func fetchRemoteConfig() {
         // FIXME: Dont put this code in production
         let debugSettings = RemoteConfigSettings(developerModeEnabled: true)
-        RemoteConfig.remoteConfig().configSettings = debugSettings!
+        RemoteConfig.remoteConfig().configSettings = debugSettings
         RemoteConfig.remoteConfig().fetch(withExpirationDuration: 0, completionHandler: { [unowned self] (status, error) in
             guard error == nil else{
                 print("Some error in fetching remote configuration")

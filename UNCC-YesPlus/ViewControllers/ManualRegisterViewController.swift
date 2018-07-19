@@ -37,22 +37,22 @@ class ManualRegisterViewController: UIViewController, UITextFieldDelegate{
         if (validationResult.keys.first)!{
             print("Lets register him")
             //Register a new user in firebase
-            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (authResult, error) in
                 if (error != nil){
                     self.displayAlertWith(string: "Error in registering user")
                     print(error?.localizedDescription ?? "No description found")
                 }else{
                     self.displayAlertWith(string: "User Registration Successful")
-                    print("user created with username \(user.debugDescription)")
+                    print("user created with username \(authResult.debugDescription)")
                     //store uuid in userdefaults
-                    UserDefaults.standard.set(user?.uid, forKey: "uuid")
+                    UserDefaults.standard.set(authResult?.user.uid, forKey: "uuid")
                     let rootreference = Database.database().reference()
-                    let userReference = rootreference.child("iOSUsers").child(user!.uid)
+                    let userReference = rootreference.child("iOSUsers").child(authResult!.user.uid)
                     let user = [
                         "firstName":self.firstnameTextField.text!,
                         "lastName":self.lastNameTextField.text!,
                         "email":self.emailTextField.text ?? "No Email",
-                        "id": user?.uid ?? "No UID",
+                        "id": authResult?.user.uid ?? "No UID",
                         "isPushEnabled" : false,
                         "deviceID" : "",
                         "birthDate" : self.birthDateTextField.text

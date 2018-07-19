@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonPressed(_ sender: LoginAndSignUpButton) {
         if emailTextField.text != "" && passwordTextField.text != ""{
-            Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
+            Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (authResult, error) in
                 if error != nil{
                     let alertController = UIAlertController(title: "Log in failed", message: "Please enter valid email id and password. Or click on Create New Account to get started", preferredStyle: UIAlertControllerStyle.alert)
                     let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
                     self.show(alertController, sender: nil)
                 }
                 else{
-                    let uuid = user?.uid
+                    let uuid = authResult?.user.uid
                     UserDefaults.standard.set(uuid, forKey: "uuid")
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "loginSuccessfull", sender: nil)
