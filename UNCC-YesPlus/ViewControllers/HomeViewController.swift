@@ -32,12 +32,15 @@ class HomeViewController: UIViewController, UITabBarDelegate {
         settingsView.isHidden = true
         if(item.title == "Quotes"){
             quotesView.isHidden = false
+            NotificationCenter.default.post(name: .quoteRefresh, object: nil)
         }
         if item.title == "Events" {
             eventsView.isHidden = false
+            NotificationCenter.default.post(name: .eventRefresh, object: nil)
         }
         if item.title == "Settings" {
             settingsView.isHidden = false
+            NotificationCenter.default.post(name: .settingRefresh, object: nil)
         }
     }
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -54,4 +57,7 @@ class HomeViewController: UIViewController, UITabBarDelegate {
 extension Notification.Name{
     static let events = Notification.Name("Events")
     static let quotes = Notification.Name("Quotes")
+    static let eventRefresh = Notification.Name("EventRefresh")
+    static let quoteRefresh = Notification.Name("QuoteRefresh")
+    static let settingRefresh = Notification.Name("SettingRefresh")
 }

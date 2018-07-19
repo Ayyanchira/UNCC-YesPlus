@@ -18,6 +18,7 @@ class EventsViewController: UITableViewController {
         super.viewDidLoad()
         //Enabling notification listeners
         NotificationCenter.default.addObserver(self, selector: #selector(navigateToNewEventView), name: .events, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView), name: .eventRefresh, object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -74,8 +75,13 @@ class EventsViewController: UITableViewController {
         
     }
 
+    //MARK:- Notified events
     @objc func navigateToNewEventView() {
         performSegue(withIdentifier: "NewEvent", sender: nil)
+    }
+    
+    @objc func refreshTableView() {
+        fetchEvents()
     }
 }
 

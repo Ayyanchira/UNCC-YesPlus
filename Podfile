@@ -12,4 +12,5 @@ target 'UNCC-YesPlus' do
 	pod 'GoogleSignIn'
 	pod 'Firebase/Database'
 	pod 'IQKeyboardManagerSwift'
+	pod 'Firebase/RemoteConfig'
 end

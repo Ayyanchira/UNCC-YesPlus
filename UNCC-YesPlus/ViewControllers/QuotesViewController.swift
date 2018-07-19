@@ -18,7 +18,7 @@ class QuotesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(navigateToNewQuoteView), name: .quotes, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView), name: .quoteRefresh, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,10 +35,6 @@ class QuotesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.quoteTextView.text = quotes[indexPath.row].quote
         cell.authorTextLabel.text = quotes[indexPath.row].author
         return cell
-    }
-    
-    @objc func navigateToNewQuoteView() {
-        performSegue(withIdentifier: "newQuote", sender: nil)
     }
     
     func fetchQuotes() {
@@ -59,5 +55,14 @@ class QuotesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.tableView.reloadData()
         }
         
+    }
+    
+    @objc func navigateToNewQuoteView() {
+        performSegue(withIdentifier: "newQuote", sender: nil)
+    }
+    
+    @objc func refreshTableView() {
+        print("Quotes refreshing...")
+        fetchQuotes()
     }
 }

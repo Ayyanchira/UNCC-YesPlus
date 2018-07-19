@@ -550,13 +550,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="207.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" text="Old is gold" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pae-Ef-f9l">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Old is gold" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pae-Ef-f9l">
                                                     <rect key="frame" x="15" y="11" width="345" height="150"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Sri Sri Ravi Shankar" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ylj-Cn-Z5C">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Sri Sri Ravi Shankar" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ylj-Cn-Z5C">
                                                     <rect key="frame" x="180" y="169" width="180" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="180" id="7re-mH-Gpe"/>
@@ -988,7 +988,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAA-TW-Q7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5228" y="-304"/>
+            <point key="canvasLocation" x="5402" y="1027"/>
         </scene>
         <!--Events View Controller-->
         <scene sceneID="PC6-d4-b5e">
@@ -1041,7 +1041,7 @@
                                                         <constraint firstAttribute="height" constant="103" id="DC7-FE-gEm"/>
                                                         <constraint firstAttribute="width" constant="104" id="b3m-AO-BhE"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Cochin-Italic" family="Cochin" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Cochin-Italic" family="Cochin" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1106,11 +1106,114 @@
                     </tableView>
                     <connections>
                         <segue destination="Vpl-HH-yBs" kind="show" identifier="NewEvent" id="jLc-Df-dpl"/>
+                        <segue destination="3Gi-Dn-TRx" kind="show" identifier="eventDetail" id="4Jz-pr-8JM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u1t-yg-fA2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3280" y="65"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dIR-sC-sSW">
+            <objects>
+                <viewController id="3Gi-Dn-TRx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BvX-4e-ock">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6l-KV-DjP" customClass="EventCellView" customModule="UNCC_YesPlus" customModuleProvider="target">
+                                <rect key="frame" x="16" y="20" width="343" height="349.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fall Retreat Session " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0a0-lm-i3f">
+                                        <rect key="frame" x="68.5" y="8" width="207.5" height="47"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTt-2P-ksb" userLabel="UpperSeperator">
+                                        <rect key="frame" x="5" y="75" width="333" height="1"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="X67-yO-AsD"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqJ-P5-iID" userLabel="LowerSeperator">
+                                        <rect key="frame" x="5" y="161" width="333" height="1"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="5gw-Qr-WSB"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HE5-JZ-Rff" userLabel="VerticalSeperator">
+                                        <rect key="frame" x="171" y="75" width="1" height="87"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="BBB-5D-Ag4"/>
+                                        </constraints>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEl-vn-5Ft">
+                                        <rect key="frame" x="8" y="170" width="327" height="171.5"/>
+                                        <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <string key="text">Free meditation session including warmup, sun-salutation, pranayams, omkar and the incredible Sudarshan Kriya. Blankets and Yoga mat will be provided. Session will boost your concentration and will help you in your upcoming exams. We can have lunch together afterwards. </string>
+                                        <fontDescription key="fontDescription" name="MalayalamSangamMN" family="Malayalam Sangam MN" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29th Aug 2018" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vkq-VE-q1V">
+                                        <rect key="frame" x="8" y="84" width="155" height="69"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:00am to 4:00pm" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgM-wY-VNc">
+                                        <rect key="frame" x="180" y="84" width="155" height="69"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="0a0-lm-i3f" firstAttribute="top" secondItem="h6l-KV-DjP" secondAttribute="top" constant="8" id="5C0-B9-b4x"/>
+                                    <constraint firstItem="HE5-JZ-Rff" firstAttribute="top" secondItem="bTt-2P-ksb" secondAttribute="bottom" constant="-1" id="6wM-gg-DhL"/>
+                                    <constraint firstItem="cqJ-P5-iID" firstAttribute="top" secondItem="UgM-wY-VNc" secondAttribute="bottom" constant="8" id="7dz-c2-cdK"/>
+                                    <constraint firstItem="Vkq-VE-q1V" firstAttribute="leading" secondItem="h6l-KV-DjP" secondAttribute="leading" constant="8" id="87G-Gi-Chb"/>
+                                    <constraint firstItem="bTt-2P-ksb" firstAttribute="leading" secondItem="h6l-KV-DjP" secondAttribute="leading" constant="5" id="8lg-sd-hxT"/>
+                                    <constraint firstItem="HE5-JZ-Rff" firstAttribute="centerX" secondItem="h6l-KV-DjP" secondAttribute="centerX" id="Aku-FR-KE8"/>
+                                    <constraint firstItem="cqJ-P5-iID" firstAttribute="top" secondItem="HE5-JZ-Rff" secondAttribute="bottom" constant="-1" id="FSe-nP-tTv"/>
+                                    <constraint firstItem="qEl-vn-5Ft" firstAttribute="leading" secondItem="h6l-KV-DjP" secondAttribute="leading" constant="8" id="H7U-tl-pR5"/>
+                                    <constraint firstItem="0a0-lm-i3f" firstAttribute="centerX" secondItem="h6l-KV-DjP" secondAttribute="centerX" id="IP9-n5-Jk1"/>
+                                    <constraint firstAttribute="trailing" secondItem="cqJ-P5-iID" secondAttribute="trailing" constant="5" id="IyB-KB-Qg1"/>
+                                    <constraint firstItem="UgM-wY-VNc" firstAttribute="top" secondItem="bTt-2P-ksb" secondAttribute="bottom" constant="8" id="Q5W-qL-BKQ"/>
+                                    <constraint firstItem="qEl-vn-5Ft" firstAttribute="top" secondItem="cqJ-P5-iID" secondAttribute="bottom" constant="8" id="YFF-v7-8DI"/>
+                                    <constraint firstItem="UgM-wY-VNc" firstAttribute="leading" secondItem="HE5-JZ-Rff" secondAttribute="trailing" constant="8" id="b0d-U0-bD0"/>
+                                    <constraint firstAttribute="trailing" secondItem="qEl-vn-5Ft" secondAttribute="trailing" constant="8" id="dFc-re-lfH"/>
+                                    <constraint firstAttribute="bottom" secondItem="qEl-vn-5Ft" secondAttribute="bottom" constant="8" id="dpC-kN-uwc"/>
+                                    <constraint firstItem="Vkq-VE-q1V" firstAttribute="top" secondItem="bTt-2P-ksb" secondAttribute="bottom" constant="8" id="fde-yQ-ETx"/>
+                                    <constraint firstAttribute="trailing" secondItem="bTt-2P-ksb" secondAttribute="trailing" constant="5" id="h3o-X8-3HT"/>
+                                    <constraint firstAttribute="trailing" secondItem="UgM-wY-VNc" secondAttribute="trailing" constant="8" id="ich-ii-Lkh"/>
+                                    <constraint firstItem="cqJ-P5-iID" firstAttribute="top" secondItem="bTt-2P-ksb" secondAttribute="bottom" constant="85" id="lVJ-DW-qfD"/>
+                                    <constraint firstItem="cqJ-P5-iID" firstAttribute="leading" secondItem="h6l-KV-DjP" secondAttribute="leading" constant="5" id="p5Q-31-OzS"/>
+                                    <constraint firstItem="cqJ-P5-iID" firstAttribute="top" secondItem="Vkq-VE-q1V" secondAttribute="bottom" constant="8" id="piv-fK-DVB"/>
+                                    <constraint firstItem="bTt-2P-ksb" firstAttribute="top" secondItem="0a0-lm-i3f" secondAttribute="bottom" constant="20" id="r4u-P1-M4Z"/>
+                                    <constraint firstItem="HE5-JZ-Rff" firstAttribute="top" secondItem="h6l-KV-DjP" secondAttribute="top" constant="75" id="vvK-tw-NV8"/>
+                                    <constraint firstItem="HE5-JZ-Rff" firstAttribute="leading" secondItem="Vkq-VE-q1V" secondAttribute="trailing" constant="8" id="wim-kk-pZQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1647058824" green="0.16862745100000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="h6l-KV-DjP" firstAttribute="leading" secondItem="TLg-Pg-xfH" secondAttribute="leading" constant="16" id="4ns-ib-olt"/>
+                            <constraint firstItem="TLg-Pg-xfH" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="h6l-KV-DjP" secondAttribute="bottom" constant="217" id="LyM-hu-JMC"/>
+                            <constraint firstItem="h6l-KV-DjP" firstAttribute="top" secondItem="TLg-Pg-xfH" secondAttribute="top" id="laa-Cn-7ck"/>
+                            <constraint firstItem="TLg-Pg-xfH" firstAttribute="trailing" secondItem="h6l-KV-DjP" secondAttribute="trailing" constant="16" id="ny0-q6-NMy"/>
+                            <constraint firstItem="h6l-KV-DjP" firstAttribute="centerX" secondItem="TLg-Pg-xfH" secondAttribute="centerX" id="zoX-az-UbB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TLg-Pg-xfH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HSd-cS-ZjS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4216.8000000000002" y="64.767616191904054"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="o4y-mK-ctS">
