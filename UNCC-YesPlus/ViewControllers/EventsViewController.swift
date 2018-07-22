@@ -72,7 +72,7 @@ class EventsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        performSegue(withIdentifier: "eventDetail", sender: nil)
     }
 
     //MARK:- Notified events

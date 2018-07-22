@@ -16,6 +16,9 @@
 		7314F7D9205C746A00D8590C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7314F7D8205C746A00D8590C /* HomeViewController.swift */; };
 		73278C8F20E0BD4700AF6FD2 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73278C8E20E0BD4700AF6FD2 /* NewEventViewController.swift */; };
 		733498AE20B205D200EE82FB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733498AD20B205D200EE82FB /* SignUpViewController.swift */; };
+		7339643421045F9300C7C79B /* EventDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7339643321045F9300C7C79B /* EventDetailTableViewCell.swift */; };
+		733964362104655600C7C79B /* EventDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733964352104655600C7C79B /* EventDetailTableViewController.swift */; };
+		733964382104726D00C7C79B /* EventActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733964372104726D00C7C79B /* EventActionsTableViewCell.swift */; };
 		738AB89D20F424F400C70467 /* NewQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738AB89C20F424F400C70467 /* NewQuoteViewController.swift */; };
 		738AB89F20F4379300C70467 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738AB89E20F4379300C70467 /* SettingsTableViewCell.swift */; };
 		739A84C920997A5E00FB60A0 /* UsernameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739A84C820997A5E00FB60A0 /* UsernameTextField.swift */; };
@@ -50,6 +53,9 @@
 		7314F7D8205C746A00D8590C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		73278C8E20E0BD4700AF6FD2 /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		733498AD20B205D200EE82FB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7339643321045F9300C7C79B /* EventDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewCell.swift; sourceTree = "<group>"; };
+		733964352104655600C7C79B /* EventDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewController.swift; sourceTree = "<group>"; };
+		733964372104726D00C7C79B /* EventActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventActionsTableViewCell.swift; sourceTree = "<group>"; };
 		73680B3E20CC707D00B23CE8 /* UNCC-YesPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "UNCC-YesPlus.entitlements"; sourceTree = "<group>"; };
 		738AB89C20F424F400C70467 /* NewQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuoteViewController.swift; sourceTree = "<group>"; };
 		738AB89E20F4379300C70467 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 				73F295EC20C1A5A3007FBBA5 /* UniversitySelectionViewController.swift */,
 				73278C8E20E0BD4700AF6FD2 /* NewEventViewController.swift */,
 				738AB89C20F424F400C70467 /* NewQuoteViewController.swift */,
+				733964352104655600C7C79B /* EventDetailTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -155,6 +162,8 @@
 				73EDF26D2099EB4B003C0215 /* EventCellView.swift */,
 				73ABEE7120F2FE5800E6AD49 /* QuoteTableViewCell.swift */,
 				738AB89E20F4379300C70467 /* SettingsTableViewCell.swift */,
+				7339643321045F9300C7C79B /* EventDetailTableViewCell.swift */,
+				733964372104726D00C7C79B /* EventActionsTableViewCell.swift */,
 			);
 			path = CustomComponents;
 			sourceTree = "<group>";
@@ -341,16 +350,19 @@
 				73F295E720C09C9E007FBBA5 /* FireBaseHelper.swift in Sources */,
 				7314F7D7205C731000D8590C /* LaunchScreenViewController.swift in Sources */,
 				738AB89D20F424F400C70467 /* NewQuoteViewController.swift in Sources */,
+				733964362104655600C7C79B /* EventDetailTableViewController.swift in Sources */,
 				73FC8A68209FAB0F00DED24D /* ManualRegisterViewController.swift in Sources */,
 				73EDF26E2099EB4B003C0215 /* EventCellView.swift in Sources */,
 				7314F7C5205C6A2A00D8590C /* AppDelegate.swift in Sources */,
 				738AB89F20F4379300C70467 /* SettingsTableViewCell.swift in Sources */,
 				739A84C920997A5E00FB60A0 /* UsernameTextField.swift in Sources */,
 				73ABEE7520F31A8400E6AD49 /* Event.swift in Sources */,
+				7339643421045F9300C7C79B /* EventDetailTableViewCell.swift in Sources */,
 				73278C8F20E0BD4700AF6FD2 /* NewEventViewController.swift in Sources */,
 				73ABEE7720F31BA100E6AD49 /* Quote.swift in Sources */,
 				73EDF26C2099E6D0003C0215 /* EventsViewController.swift in Sources */,
 				733498AE20B205D200EE82FB /* SignUpViewController.swift in Sources */,
+				733964382104726D00C7C79B /* EventActionsTableViewCell.swift in Sources */,
 				73F295EB20C18C52007FBBA5 /* SettingsViewController.swift in Sources */,
 				73F295ED20C1A5A3007FBBA5 /* UniversitySelectionViewController.swift in Sources */,
 				7314F7D9205C746A00D8590C /* HomeViewController.swift in Sources */,
