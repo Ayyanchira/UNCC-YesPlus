@@ -21,37 +21,38 @@ class EventDetailTableViewController: UITableViewController {
     public var eventDetail:Event?
     
     let uid = UserDefaults.standard.value(forKey: "uuid") as? String
-    var userStatusUpdated:userAttendance = userAttendance.NotResponded
+    var userStatusUpdated:userAttendance?
     var userStatus:userAttendance{
-        if userStatusUpdated != .NotResponded{
-            return userStatusUpdated
-        }
-        var userFound = userAttendance.NotResponded
-        if (eventDetail?.acceptedInvites != nil){
-            for userKey in (eventDetail?.acceptedInvites)! {
-                if (userKey == uid){
-                    userFound = userAttendance.Accepted
+        //user status updated status will take over the button higlighting and dishighlighting. This will reduce unnecessary fetch calls from firebase. It will be locally handled. The event details with its attendees will be fetched only in Events view controller.
+        if userStatusUpdated != nil{
+            return userStatusUpdated!
+        }else{
+            var userFound = userAttendance.NotResponded
+            if (eventDetail?.acceptedInvites != nil){
+                for userKey in (eventDetail?.acceptedInvites)! {
+                    if (userKey == uid){
+                        userFound = userAttendance.Accepted
+                    }
                 }
             }
-        }
-        if (eventDetail?.rejectedInvites != nil){
-            for userKey in (eventDetail?.rejectedInvites)! {
-                if (userKey == uid){
-                    userFound = userAttendance.Rejected
+            if (eventDetail?.rejectedInvites != nil){
+                for userKey in (eventDetail?.rejectedInvites)! {
+                    if (userKey == uid){
+                        userFound = userAttendance.Rejected
+                    }
                 }
             }
-        }
-        if (eventDetail?.tentativeInvites != nil){
-            for userKey in (eventDetail?.tentativeInvites)! {
-                if (userKey == uid){
-                    userFound = userAttendance.Tentative
+            if (eventDetail?.tentativeInvites != nil){
+                for userKey in (eventDetail?.tentativeInvites)! {
+                    if (userKey == uid){
+                        userFound = userAttendance.Tentative
+                    }
                 }
             }
+            return userFound
         }
-        return userFound
+        
     }
-    
-    @IBOutlet weak var acceptButtonOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,7 +102,9 @@ class EventDetailTableViewController: UITableViewController {
                     eventActionCell.rejectButton.isEnabled = false
                     eventActionCell.acceptButton.isEnabled = false
                 case .NotResponded:
-                    print("No cell selected")
+                    eventActionCell.acceptButton.isEnabled = true
+                    eventActionCell.rejectButton.isEnabled = true
+                    eventActionCell.tentativeButton.isEnabled = true
             }
             return eventActionCell
             
@@ -128,21 +131,47 @@ class EventDetailTableViewController: UITableViewController {
         return cell
     }
  
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 1 {
+            return 142
+        }else{
+            return tableView.rowHeight
+        }
+    }
+    
+    //PRAGMA MARK:- Action button IBAction functions
     @IBAction func acceptButtonPressed(_ sender: UIButton) {
         let acceptedListReference = self.rootref.child("allEvents").child((eventDetail?.eventKey)!).child("accepted")
-        sendInviteResponseTo(listReference: acceptedListReference, with: "accept")
+        if userStatus == .NotResponded{
+            sendInviteResponseTo(listReference: acceptedListReference, with: "accept")
+        }else{
+            removeInviteReponseFrom(listReference: acceptedListReference.child(uid!), with: "accept")
+        }
+        
     }
     
     @IBAction func tentativeButtonPressed(_ sender: UIButton) {
-        let rejectedListReference = self.rootref.child("allEvents").child((eventDetail?.eventKey)!).child("tentative")
-        sendInviteResponseTo(listReference: rejectedListReference, with: "tentative")
+        let tentativeListReference = self.rootref.child("allEvents").child((eventDetail?.eventKey)!).child("tentative")
+        if userStatus == .NotResponded{
+            sendInviteResponseTo(listReference: tentativeListReference, with: "tentative")
+        }else{
+            removeInviteReponseFrom(listReference: tentativeListReference.child(uid!), with: "tentative")
+        }
+        
     }
     
     @IBAction func declineButtonPressed(_ sender: UIButton) {
-        let tentativeListReference = self.rootref.child("allEvents").child((eventDetail?.eventKey)!).child("rejected")
-        sendInviteResponseTo(listReference: tentativeListReference, with: "reject")
+        let rejectedListReference = self.rootref.child("allEvents").child((eventDetail?.eventKey)!).child("rejected")
+        if userStatus == .NotResponded{
+            sendInviteResponseTo(listReference: rejectedListReference, with: "reject")
+        }else{
+            removeInviteReponseFrom(listReference: rejectedListReference.child(uid!), with: "reject")
+        }
+        
     }
     
+    
+    //PRAGMA MARK:-
     func sendInviteResponseTo(listReference:DatabaseReference,with context:String) {
         let uidReference = listReference.child(uid!)
         uidReference.setValue(uid) { (error, dbref) in
@@ -162,12 +191,17 @@ class EventDetailTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 1 {
-            return 142
-        }else{
-            return tableView.rowHeight
+    
+    func removeInviteReponseFrom(listReference:DatabaseReference, with context:String){
+        listReference.removeValue { (error, dbref) in
+            if error == nil{
+                self.userStatusUpdated = .NotResponded
+                self.tableView.reloadData()
+            }else{
+                print(error?.localizedDescription ?? "Error while updating the firebase values")
+            }
         }
     }
+    
 
 }
