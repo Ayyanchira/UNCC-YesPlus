@@ -171,6 +171,7 @@ class NewEventViewController: UIViewController {
         }
         
         let eventReference = rootref.child("allEvents").childByAutoId()
+
         let eventObject = [
             "eTitle" : "\(eventTitleTextField.text ?? "Some Title")",
             "eDescription" : eventDescriptionTextView.text,
@@ -179,6 +180,7 @@ class NewEventViewController: UIViewController {
             "eId": eventReference.key,
             "eStartTime" : fromTime,
             "eEndTime" : toTime,
+            "eLocation" : locationTextField.text ?? "Location not provided",
             "eUniversity" : "UNC Charlotte"
             ] as [String : Any]
 

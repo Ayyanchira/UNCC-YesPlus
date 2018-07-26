@@ -1361,7 +1361,7 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventActions" rowHeight="142" id="ZtH-Lp-CGU" customClass="EventActionsTableViewCell" customModule="UNCC_YesPlus" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="463" width="375" height="142"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZtH-Lp-CGU" id="Jkp-GK-2Aq">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZtH-Lp-CGU" id="Jkp-GK-2Aq">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -1406,7 +1406,9 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.16470588235294117" green="0.16862745098039217" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <outletCollection property="userActionButtons" destination="SLf-n6-uuU" collectionClass="NSMutableArray" id="C2D-oT-RW9"/>
+                                    <outlet property="acceptButton" destination="SLf-n6-uuU" id="C3F-3t-em0"/>
+                                    <outlet property="rejectButton" destination="ehu-pA-HKn" id="3YH-0l-sFA"/>
+                                    <outlet property="tentativeButton" destination="MS3-BI-p0V" id="cJa-D0-WKx"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

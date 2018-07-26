@@ -18,6 +18,9 @@ class Event: NSObject {
     var toTime:String
     var location:String
     var university:String
+    var acceptedInvites:[String]?
+    var rejectedInvites:[String]?
+    var tentativeInvites:[String]?
     
     init(eventKey:String, title:String, eventDescription:String, fromDate:String, fromTime:String, toDate:String, toTime:String, location:String, university:String) {
         self.eventKey = eventKey

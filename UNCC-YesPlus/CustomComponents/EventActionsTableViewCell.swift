@@ -10,7 +10,9 @@ import UIKit
 
 class EventActionsTableViewCell: UITableViewCell {
 
-    @IBOutlet var userActionButtons: [UIButton]!
+    @IBOutlet weak var acceptButton: UIButton!
+    @IBOutlet weak var tentativeButton: UIButton!
+    @IBOutlet weak var rejectButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

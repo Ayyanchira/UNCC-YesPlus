@@ -37,16 +37,41 @@ class EventsViewController: UITableViewController {
                 self.events.removeAll()
                 for key in values.allKeys{
                     let eventObject = values[key] as? [String:Any]
-                    let eventKey = eventObject!["eId"] as! String
+                    let eventKey = key as! String
                     let eventTitle = eventObject!["eTitle"] as! String
                     let fromDate = eventObject!["eDate"] as! String
                     let fromTime = eventObject!["eStartTime"] as! String
                     let toDate = eventObject!["eDate"] as! String
                     let toTime = eventObject!["eEndTime"] as! String
-                    let location = eventObject!["eDescription"] as! String
+                    let location = eventObject!["eLocation"] as? String ?? "Not provided"
                     let university = eventObject!["eUniversity"] as! String
                     let eventDescription = eventObject!["eDescription"] as! String
+                    let acceptedInvites = eventObject!["accepted"] as? [String:String]
+                    let rejectedInvites = eventObject!["rejected"] as? [String:String]
+                    let tentativeInvites = eventObject!["tentative"] as? [String:String]
+                    
                     let event = Event(eventKey: eventKey, title: eventTitle, eventDescription: eventDescription, fromDate: fromDate, fromTime: fromTime, toDate: toDate, toTime: toTime, location: location, university: university)
+                    var acceptedKeys = [String]()
+                    if(acceptedInvites != nil){
+                        for value in (acceptedInvites?.values)!{
+                            acceptedKeys.append(value)
+                        }
+                    }
+                    var rejectedKeys = [String]()
+                    if(rejectedInvites != nil){
+                        for value in (rejectedInvites?.values)!{
+                            rejectedKeys.append(value)
+                        }
+                    }
+                    var tentativeKeys = [String]()
+                    if(tentativeInvites != nil){
+                        for value in (tentativeInvites?.values)!{
+                            tentativeKeys.append(value)
+                        }
+                    }
+                    event.acceptedInvites = acceptedKeys
+                    event.rejectedInvites = rejectedKeys
+                    event.tentativeInvites = tentativeKeys
                     self.events.append(event)
                 }
             }
@@ -72,7 +97,14 @@ class EventsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "eventDetail", sender: nil)
+        performSegue(withIdentifier: "eventDetail", sender: events[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "eventDetail"){
+            let vc = segue.destination as? EventDetailTableViewController
+            vc?.eventDetail = sender as? Event
+        }
     }
 
     //MARK:- Notified events
