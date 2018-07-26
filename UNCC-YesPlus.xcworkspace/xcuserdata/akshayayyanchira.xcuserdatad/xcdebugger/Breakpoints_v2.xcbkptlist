@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UNCC-YesPlus/ViewControllers/NewQuoteViewController.swift"
-            timestampString = "554331518.725342"
+            timestampString = "554332639.195008"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -106,13 +106,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UNCC-YesPlus/ViewControllers/EventDetailTableViewController.swift"
-            timestampString = "554331518.725402"
+            timestampString = "554334088.90863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "EventDetailTableViewController"
-            landmarkType = "3">
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "numberOfSections(in:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UNCC-YesPlus/ViewControllers/EventDetailTableViewController.swift"
-            timestampString = "554331518.725755"
+            timestampString = "554334088.90903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UNCC-YesPlus/ViewControllers/EventDetailTableViewController.swift"
-            timestampString = "554331518.725965"
+            timestampString = "554334088.909284"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "sendInviteResponseTo(listReference:with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UNCC-YesPlus/ViewControllers/EventDetailTableViewController.swift"
-            timestampString = "554331518.7261569"
+            timestampString = "554334088.909516"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "sendInviteResponseTo(listReference:with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UNCC-YesPlus/ViewControllers/EventDetailTableViewController.swift"
-            timestampString = "554331518.726352"
+            timestampString = "554334088.909848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "sendInviteResponseTo(listReference:with:)"
             landmarkType = "7">
             <Locations>
@@ -234,12 +234,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UNCC-YesPlus/ViewControllers/EventDetailTableViewController.swift"
-            timestampString = "554331518.7265429"
+            timestampString = "554334088.910078"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "acceptButtonPressed(_:)"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "tentativeButtonPressed(_:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -282,7 +282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UNCC-YesPlus/ViewControllers/EventsViewController.swift"
-            timestampString = "554331518.726728"
+            timestampString = "554334235.576755"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"

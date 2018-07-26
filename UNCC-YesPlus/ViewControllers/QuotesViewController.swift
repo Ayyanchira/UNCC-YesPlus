@@ -37,6 +37,25 @@ class QuotesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (rowAction, indexPath) in
+            self.deleteQuoteAt(indexPath: indexPath)
+        }
+        return [deleteAction]
+    }
+    
+    func deleteQuoteAt(indexPath:IndexPath) {
+        let quoteToDelete = quotes[indexPath.row]
+        let quoteReference = rootReference.child("allQuotes").child(quoteToDelete.key)
+        quoteReference.removeValue { (error, dbRef) in
+            self.fetchQuotes()
+        }
+    }
+    
     func fetchQuotes() {
         let quoteReference = rootReference.child("allQuotes")
         quoteReference.observeSingleEvent(of: .value) { (snapshot) in
@@ -46,7 +65,7 @@ class QuotesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     let quoteObject = values[key] as? [String:Any]
                     let quoteString = quoteObject!["quote"] as! String
                     let author = quoteObject!["author"] as! String
-                    let key = quoteObject!["key"] as! String
+                    let key = key as! String
                     
                     let quote = Quote(quote: quoteString, author: author, key:key)
                     self.quotes.append(quote)
