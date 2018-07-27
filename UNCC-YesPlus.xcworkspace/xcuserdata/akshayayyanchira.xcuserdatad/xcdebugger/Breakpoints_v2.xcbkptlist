@@ -102,16 +102,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UNCC-YesPlus/ViewControllers/EventDetailTableViewController.swift"
-            timestampString = "554334088.90863"
+            timestampString = "554393049.6432101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
             endingLineNumber = "66"
-            landmarkName = "numberOfSections(in:)"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -134,11 +134,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UNCC-YesPlus/ViewControllers/EventDetailTableViewController.swift"
-            timestampString = "554334088.90903"
+            timestampString = "554393049.6437089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -154,12 +154,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UNCC-YesPlus/ViewControllers/EventDetailTableViewController.swift"
-            timestampString = "554334088.909284"
+            timestampString = "554393049.644086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
-            landmarkName = "sendInviteResponseTo(listReference:with:)"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -170,12 +170,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UNCC-YesPlus/ViewControllers/EventDetailTableViewController.swift"
-            timestampString = "554334088.909516"
+            timestampString = "554393049.644471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
-            landmarkName = "sendInviteResponseTo(listReference:with:)"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -186,108 +186,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UNCC-YesPlus/ViewControllers/EventDetailTableViewController.swift"
-            timestampString = "554334088.909848"
+            timestampString = "554393049.6448129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
-            landmarkName = "sendInviteResponseTo(listReference:with:)"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "UNCC_YesPlus.EventDetailTableViewController.sendInviteResponseTo(listReference: __ObjC.DatabaseReference, with: Swift.String) -&gt; ()"
-                  moduleName = "UNCC-YesPlus"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/akshayayyanchira/Documents/Xcode%20Projects/UNCC-YesPlus/UNCC-YesPlus/ViewControllers/EventDetailTableViewController.swift"
-                  timestampString = "554329072.522094"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "148"
-                  endingLineNumber = "148"
-                  offsetFromSymbolStart = "538">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;, __ObjC.DatabaseReference) -&gt; () in UNCC_YesPlus.EventDetailTableViewController.sendInviteResponseTo(listReference: __ObjC.DatabaseReference, with: Swift.String) -&gt; ()"
-                  moduleName = "UNCC-YesPlus"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/akshayayyanchira/Documents/Xcode%20Projects/UNCC-YesPlus/UNCC-YesPlus/ViewControllers/EventDetailTableViewController.swift"
-                  timestampString = "554329072.52467"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "149"
-                  endingLineNumber = "149"
-                  offsetFromSymbolStart = "38">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UNCC-YesPlus/ViewControllers/EventDetailTableViewController.swift"
-            timestampString = "554334088.910078"
+            timestampString = "554393049.645072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "tentativeButtonPressed(_:)"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "UNCC_YesPlus.EventDetailTableViewController.acceptButtonPressed(__ObjC.UIButton) -&gt; ()"
-                  moduleName = "UNCC-YesPlus"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/akshayayyanchira/Documents/Xcode%20Projects/UNCC-YesPlus/UNCC-YesPlus/ViewControllers/EventDetailTableViewController.swift"
-                  timestampString = "554329072.52988"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "132"
-                  endingLineNumber = "132"
-                  offsetFromSymbolStart = "29">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "UNCC_YesPlus.EventDetailTableViewController.acceptButtonPressed(__ObjC.UIButton) -&gt; ()"
-                  moduleName = "UNCC-YesPlus"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/akshayayyanchira/Documents/Xcode%20Projects/UNCC-YesPlus/UNCC-YesPlus/ViewControllers/EventDetailTableViewController.swift"
-                  timestampString = "554329072.5319279"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "132"
-                  endingLineNumber = "132"
-                  offsetFromSymbolStart = "755">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UNCC-YesPlus/ViewControllers/EventsViewController.swift"
-            timestampString = "554334235.576755"
+            timestampString = "554393049.645357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
             endingLineNumber = "39"
             landmarkName = "fetchEvents()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UNCC-YesPlus/ViewControllers/EventDetailTableViewController.swift"
+            timestampString = "554393049.6454051"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
+            landmarkName = "tableView(_:heightForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UNCC-YesPlus/ViewControllers/EventsViewController.swift"
+            timestampString = "554393049.6455981"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "fetchEvents()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UNCC-YesPlus/ViewControllers/EventDetailTableViewController.swift"
+            timestampString = "554393049.645642"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "tableView(_:heightForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

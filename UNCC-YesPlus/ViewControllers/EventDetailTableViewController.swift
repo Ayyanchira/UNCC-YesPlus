@@ -129,10 +129,19 @@ class EventDetailTableViewController: UITableViewController {
         if section == 0{
             return 3
         }else if section == 1{
+            if acceptedInvites.count == 0 {
+                return 1
+            }
             return acceptedInvites.count
         }else if section == 2{
+            if rejectedInvites.count == 0{
+                return 1
+            }
             return rejectedInvites.count
         }else{
+            if tentativeInvites.count == 0{
+                return 1
+            }
             return tentativeInvites.count
         }
     }
@@ -193,11 +202,26 @@ class EventDetailTableViewController: UITableViewController {
                 return cell
             }
         }else if indexPath.section == 1{
-            cell.textLabel?.text = acceptedInvites[indexPath.row]
+            if (acceptedInvites.count == 0){
+                cell.textLabel?.text = "No records found"
+            }else{
+                cell.textLabel?.text = acceptedInvites[indexPath.row]
+            }
+            
         }else if indexPath.section == 2{
-            cell.textLabel?.text = rejectedInvites[indexPath.row]
+            if (rejectedInvites.count == 0){
+                cell.textLabel?.text = "No records found"
+            }else{
+                cell.textLabel?.text = rejectedInvites[indexPath.row]
+            }
+            
         }else if indexPath.section == 3{
-            cell.textLabel?.text = tentativeInvites[indexPath.row]
+            if (tentativeInvites.count == 0){
+                cell.textLabel?.text = "No records found"
+            }else{
+                cell.textLabel?.text = tentativeInvites[indexPath.row]
+            }
+            
         }
         cell.textLabel?.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         cell.backgroundColor = #colorLiteral(red: 0.1647058824, green: 0.168627451, blue: 0.1921568627, alpha: 0)
@@ -207,6 +231,9 @@ class EventDetailTableViewController: UITableViewController {
     }
  
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section > 0{
+            return tableView.rowHeight
+        }
         if indexPath.row == 1 {
             return 142
         }else{
