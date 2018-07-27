@@ -17,6 +17,11 @@ class EventDetailTableViewController: UITableViewController {
         case Rejected
         case Tentative
     }
+    
+    var acceptedInvites:[String] = []
+    var rejectedInvites:[String] = []
+    var tentativeInvites:[String] = []
+    
     let rootref = Database.database().reference()
     public var eventDetail:Event?
     
@@ -57,35 +62,98 @@ class EventDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsSelection = false
+        loadAttendees()
     }
 
+    
+    func loadAttendees() {
+        let userReference = rootref.child("iOSUsers")
+        userReference.observe(DataEventType.value) { (snapShot) in
+            if let usersArray = snapShot.value as? NSDictionary{
+                for key in usersArray.allKeys{
+                    if let acceptedMembers = self.eventDetail?.acceptedInvites{
+                        for acceptedMember in acceptedMembers{
+                            if acceptedMember == key as! String{
+                                let user = usersArray[key] as? [String:Any]
+                                let firstname = user!["firstName"] as! String
+                                let lastname = user!["lastName"] as! String
+                                
+                                self.acceptedInvites.append("\(firstname) \(lastname)")
+                            }
+                        }
+                    }
+                    
+                    if let rejectedMembers = self.eventDetail?.rejectedInvites{
+                        for rejectedMember in rejectedMembers{
+                            if rejectedMember == key as! String{
+                                let user = usersArray[key] as? [String:Any]
+                                let firstname = user!["firstName"] as! String
+                                let lastname = user!["lastName"] as! String
+                                
+                                self.rejectedInvites.append("\(firstname) \(lastname)")
+                            }
+                        }
+                    }
+                    
+                    if let tentativeMembers = self.eventDetail?.tentativeInvites{
+                        for tentativeMember in tentativeMembers{
+                            if tentativeMember == key as! String{
+                                let user = usersArray[key] as? [String:Any]
+                                let firstname = user!["firstName"] as! String
+                                let lastname = user!["lastName"] as! String
+                                
+                                self.tentativeInvites.append("\(firstname) \(lastname)")
+                            }
+                        }
+                        self.tableView.reloadData()
+                    }
+                    
+                }
+            }
+            
+        }
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        
+        //if not admin just 1
+        
+        //if admin return 4
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        if section == 0{
+            return 3
+        }else if section == 1{
+            return acceptedInvites.count
+        }else if section == 2{
+            return rejectedInvites.count
+        }else{
+            return tentativeInvites.count
+        }
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell:UITableViewCell = UITableViewCell()
-        if indexPath.row == 0{
-            let eventDescriptioncell:EventDetailTableViewCell = tableView.dequeueReusableCell(withIdentifier: "eventDescription", for: indexPath) as! EventDetailTableViewCell
-            eventDescriptioncell.titleLabel.text = eventDetail?.title
-            eventDescriptioncell.eventDescription.text = eventDetail?.eventDescription
-            eventDescriptioncell.eventDateLabel.text = (eventDetail?.fromDate)! + " to " + (eventDetail?.toDate)!
-            eventDescriptioncell.eventTimeLabel.text = (eventDetail?.fromTime)! + " to " + (eventDetail?.toTime)!
-            eventDescriptioncell.locationLabel.text = eventDetail?.location
-            eventDescriptioncell.isUserInteractionEnabled = false
-            return eventDescriptioncell
-        }else if indexPath.row == 1{
-            let eventActionCell:EventActionsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "eventActions", for: indexPath) as! EventActionsTableViewCell
-            switch userStatus{
+        if indexPath.section == 0{
+            
+            if indexPath.row == 0{
+                let eventDescriptioncell:EventDetailTableViewCell = tableView.dequeueReusableCell(withIdentifier: "eventDescription", for: indexPath) as! EventDetailTableViewCell
+                eventDescriptioncell.titleLabel.text = eventDetail?.title
+                eventDescriptioncell.eventDescription.text = eventDetail?.eventDescription
+                eventDescriptioncell.eventDateLabel.text = (eventDetail?.fromDate)! + " to " + (eventDetail?.toDate)!
+                eventDescriptioncell.eventTimeLabel.text = (eventDetail?.fromTime)! + " to " + (eventDetail?.toTime)!
+                eventDescriptioncell.locationLabel.text = eventDetail?.location
+                eventDescriptioncell.isUserInteractionEnabled = false
+                return eventDescriptioncell
+            }else if indexPath.row == 1{
+                let eventActionCell:EventActionsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "eventActions", for: indexPath) as! EventActionsTableViewCell
+                switch userStatus{
                 case .Accepted:
                     eventActionCell.acceptButton.isSelected = true
                     //disabling other buttons
@@ -105,29 +173,36 @@ class EventDetailTableViewController: UITableViewController {
                     eventActionCell.acceptButton.isEnabled = true
                     eventActionCell.rejectButton.isEnabled = true
                     eventActionCell.tentativeButton.isEnabled = true
+                }
+                return eventActionCell
+                
+            }else if (indexPath.row == 2){
+                switch userStatus{
+                case .NotResponded:
+                    cell.textLabel?.text = "Please respond to the event"
+                case .Accepted:
+                    cell.textLabel?.text = "Hooray! You have accepted the invite"
+                case .Rejected:
+                    cell.textLabel?.text = "Oh! It seems are busy"
+                case .Tentative:
+                    cell.textLabel?.text = "Marked as Tentative"
+                }
+                cell.textLabel?.textAlignment = .center
+                cell.textLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+                return cell
             }
-            return eventActionCell
-            
-        }else if (indexPath.row == 2){
-            switch userStatus{
-            case .NotResponded:
-                cell.textLabel?.text = "Please respond to the event"
-            case .Accepted:
-                cell.textLabel?.text = "Hooray! You have accepted the invite"
-            case .Rejected:
-                cell.textLabel?.text = "Oh! It seems are busy"
-            case .Tentative:
-                cell.textLabel?.text = "Marked as Tentative"
-            }
-            cell.textLabel?.textAlignment = .center
-            cell.textLabel?.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
-            return cell
+        }else if indexPath.section == 1{
+            cell.textLabel?.text = acceptedInvites[indexPath.row]
+        }else if indexPath.section == 2{
+            cell.textLabel?.text = rejectedInvites[indexPath.row]
+        }else if indexPath.section == 3{
+            cell.textLabel?.text = tentativeInvites[indexPath.row]
         }
+        cell.textLabel?.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        cell.backgroundColor = #colorLiteral(red: 0.1647058824, green: 0.168627451, blue: 0.1921568627, alpha: 0)
         
-
-        // Configure the cell...
-
+        
         return cell
     }
  
@@ -136,6 +211,23 @@ class EventDetailTableViewController: UITableViewController {
             return 142
         }else{
             return tableView.rowHeight
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return nil
+        case 1:
+            return "Accepted"
+            
+        case 2:
+            return "Rejected"
+            
+        case 3:
+            return "Tentative"
+        default:
+            return nil
         }
     }
     
