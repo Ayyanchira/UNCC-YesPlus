@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>711665710001-m1t1d3j9lh1dbue73juefbnmec88dgeu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.711665710001-m1t1d3j9lh1dbue73juefbnmec88dgeu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAkkKooecl1JfRM2mi8gYQLohMcMySdJ3c</string>
+	<key>GCM_SENDER_ID</key>
+	<string>711665710001</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ideas2app.UNCC-YesPlus</string>
+	<key>PROJECT_ID</key>
+	<string>uncc-yplus</string>
+	<key>STORAGE_BUCKET</key>
+	<string>uncc-yplus.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:711665710001:ios:956929ab197c4719</string>
+	<key>DATABASE_URL</key>
+	<string>https://uncc-yplus.firebaseio.com</string>
+</dict>
+</plist>

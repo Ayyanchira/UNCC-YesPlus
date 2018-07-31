@@ -7,21 +7,74 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		731250722063E98A00680795 /* CustomHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731250712063E98A00680795 /* CustomHomeTableViewCell.swift */; };
 		7314F7C5205C6A2A00D8590C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7314F7C4205C6A2A00D8590C /* AppDelegate.swift */; };
-		7314F7C7205C6A2A00D8590C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7314F7C6205C6A2A00D8590C /* ViewController.swift */; };
 		7314F7CA205C6A2A00D8590C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7314F7C8205C6A2A00D8590C /* Main.storyboard */; };
 		7314F7CC205C6A2A00D8590C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7314F7CB205C6A2A00D8590C /* Assets.xcassets */; };
 		7314F7CF205C6A2B00D8590C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7314F7CD205C6A2B00D8590C /* LaunchScreen.storyboard */; };
+		7314F7D7205C731000D8590C /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7314F7D6205C731000D8590C /* LaunchScreenViewController.swift */; };
+		7314F7D9205C746A00D8590C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7314F7D8205C746A00D8590C /* HomeViewController.swift */; };
+		73278C8F20E0BD4700AF6FD2 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73278C8E20E0BD4700AF6FD2 /* NewEventViewController.swift */; };
+		733498AE20B205D200EE82FB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733498AD20B205D200EE82FB /* SignUpViewController.swift */; };
+		7339643421045F9300C7C79B /* EventDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7339643321045F9300C7C79B /* EventDetailTableViewCell.swift */; };
+		733964362104655600C7C79B /* EventDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733964352104655600C7C79B /* EventDetailTableViewController.swift */; };
+		733964382104726D00C7C79B /* EventActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733964372104726D00C7C79B /* EventActionsTableViewCell.swift */; };
+		738AB89D20F424F400C70467 /* NewQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738AB89C20F424F400C70467 /* NewQuoteViewController.swift */; };
+		738AB89F20F4379300C70467 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738AB89E20F4379300C70467 /* SettingsTableViewCell.swift */; };
+		739A84C920997A5E00FB60A0 /* UsernameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739A84C820997A5E00FB60A0 /* UsernameTextField.swift */; };
+		739A84CC20998B5300FB60A0 /* LoginAndSignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739A84CB20998B5300FB60A0 /* LoginAndSignUpButton.swift */; };
+		73ABEE7220F2FE5800E6AD49 /* QuoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ABEE7120F2FE5800E6AD49 /* QuoteTableViewCell.swift */; };
+		73ABEE7520F31A8400E6AD49 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ABEE7420F31A8400E6AD49 /* Event.swift */; };
+		73ABEE7720F31BA100E6AD49 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ABEE7620F31BA100E6AD49 /* Quote.swift */; };
+		73EDF26A2099E5E7003C0215 /* EventCustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EDF2692099E5E7003C0215 /* EventCustomCellTableViewCell.swift */; };
+		73EDF26C2099E6D0003C0215 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EDF26B2099E6D0003C0215 /* EventsViewController.swift */; };
+		73EDF26E2099EB4B003C0215 /* EventCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EDF26D2099EB4B003C0215 /* EventCellView.swift */; };
+		73F295E720C09C9E007FBBA5 /* FireBaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F295E620C09C9E007FBBA5 /* FireBaseHelper.swift */; };
+		73F295E920C18C45007FBBA5 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F295E820C18C45007FBBA5 /* QuotesViewController.swift */; };
+		73F295EB20C18C52007FBBA5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F295EA20C18C52007FBBA5 /* SettingsViewController.swift */; };
+		73F295ED20C1A5A3007FBBA5 /* UniversitySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F295EC20C1A5A3007FBBA5 /* UniversitySelectionViewController.swift */; };
+		73FC8A66209F9B6200DED24D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73FC8A65209F9B6200DED24D /* GoogleService-Info.plist */; };
+		73FC8A68209FAB0F00DED24D /* ManualRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FC8A67209FAB0F00DED24D /* ManualRegisterViewController.swift */; };
+		73FC8A6A209FADC900DED24D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FC8A69209FADC900DED24D /* LoginViewController.swift */; };
+		99886EEC680234DDCC8FD1CD /* Pods_UNCC_YesPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667B61BDD29AD4C9F0345A01 /* Pods_UNCC_YesPlus.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		496631A1D26EA610EA667DD0 /* Pods-UNCC-YesPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNCC-YesPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UNCC-YesPlus/Pods-UNCC-YesPlus.debug.xcconfig"; sourceTree = "<group>"; };
+		667B61BDD29AD4C9F0345A01 /* Pods_UNCC_YesPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UNCC_YesPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		731250712063E98A00680795 /* CustomHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHomeTableViewCell.swift; sourceTree = "<group>"; };
 		7314F7C1205C6A2A00D8590C /* UNCC-YesPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UNCC-YesPlus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7314F7C4205C6A2A00D8590C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7314F7C6205C6A2A00D8590C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7314F7C9205C6A2A00D8590C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7314F7CB205C6A2A00D8590C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7314F7CE205C6A2B00D8590C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7314F7D0205C6A2B00D8590C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7314F7D6205C731000D8590C /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		7314F7D8205C746A00D8590C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		73278C8E20E0BD4700AF6FD2 /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
+		733498AD20B205D200EE82FB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		7339643321045F9300C7C79B /* EventDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewCell.swift; sourceTree = "<group>"; };
+		733964352104655600C7C79B /* EventDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewController.swift; sourceTree = "<group>"; };
+		733964372104726D00C7C79B /* EventActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventActionsTableViewCell.swift; sourceTree = "<group>"; };
+		73680B3E20CC707D00B23CE8 /* UNCC-YesPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "UNCC-YesPlus.entitlements"; sourceTree = "<group>"; };
+		738AB89C20F424F400C70467 /* NewQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuoteViewController.swift; sourceTree = "<group>"; };
+		738AB89E20F4379300C70467 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		739A84C820997A5E00FB60A0 /* UsernameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextField.swift; sourceTree = "<group>"; };
+		739A84CB20998B5300FB60A0 /* LoginAndSignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndSignUpButton.swift; sourceTree = "<group>"; };
+		73ABEE7120F2FE5800E6AD49 /* QuoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTableViewCell.swift; sourceTree = "<group>"; };
+		73ABEE7420F31A8400E6AD49 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		73ABEE7620F31BA100E6AD49 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		73EDF2692099E5E7003C0215 /* EventCustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCustomCellTableViewCell.swift; sourceTree = "<group>"; };
+		73EDF26B2099E6D0003C0215 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		73EDF26D2099EB4B003C0215 /* EventCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellView.swift; sourceTree = "<group>"; };
+		73F295E620C09C9E007FBBA5 /* FireBaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseHelper.swift; sourceTree = "<group>"; };
+		73F295E820C18C45007FBBA5 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
+		73F295EA20C18C52007FBBA5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		73F295EC20C1A5A3007FBBA5 /* UniversitySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversitySelectionViewController.swift; sourceTree = "<group>"; };
+		73FC8A65209F9B6200DED24D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		73FC8A67209FAB0F00DED24D /* ManualRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualRegisterViewController.swift; sourceTree = "<group>"; };
+		73FC8A69209FADC900DED24D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C25F0A26D4998BB5E73FB21E /* Pods-UNCC-YesPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNCC-YesPlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-UNCC-YesPlus/Pods-UNCC-YesPlus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +82,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99886EEC680234DDCC8FD1CD /* Pods_UNCC_YesPlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17BCB8C5F12EED96874536B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				667B61BDD29AD4C9F0345A01 /* Pods_UNCC_YesPlus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7314F7B8205C6A2A00D8590C = {
 			isa = PBXGroup;
 			children = (
 				7314F7C3205C6A2A00D8590C /* UNCC-YesPlus */,
 				7314F7C2205C6A2A00D8590C /* Products */,
+				A82030233D750013C9496740 /* Pods */,
+				17BCB8C5F12EED96874536B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +118,80 @@
 		7314F7C3205C6A2A00D8590C /* UNCC-YesPlus */ = {
 			isa = PBXGroup;
 			children = (
+				73ABEE7320F31A7000E6AD49 /* Model */,
+				73680B3E20CC707D00B23CE8 /* UNCC-YesPlus.entitlements */,
+				73F295E520C09B8B007FBBA5 /* Service */,
+				7335133D20ACFB4B00D92528 /* ViewControllers */,
+				739A84CA20997AD300FB60A0 /* CustomComponents */,
 				7314F7C4205C6A2A00D8590C /* AppDelegate.swift */,
-				7314F7C6205C6A2A00D8590C /* ViewController.swift */,
 				7314F7C8205C6A2A00D8590C /* Main.storyboard */,
 				7314F7CB205C6A2A00D8590C /* Assets.xcassets */,
 				7314F7CD205C6A2B00D8590C /* LaunchScreen.storyboard */,
 				7314F7D0205C6A2B00D8590C /* Info.plist */,
+				731250712063E98A00680795 /* CustomHomeTableViewCell.swift */,
+				73FC8A65209F9B6200DED24D /* GoogleService-Info.plist */,
 			);
 			path = "UNCC-YesPlus";
+			sourceTree = "<group>";
+		};
+		7335133D20ACFB4B00D92528 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7314F7D6205C731000D8590C /* LaunchScreenViewController.swift */,
+				7314F7D8205C746A00D8590C /* HomeViewController.swift */,
+				73EDF26B2099E6D0003C0215 /* EventsViewController.swift */,
+				73FC8A67209FAB0F00DED24D /* ManualRegisterViewController.swift */,
+				73FC8A69209FADC900DED24D /* LoginViewController.swift */,
+				733498AD20B205D200EE82FB /* SignUpViewController.swift */,
+				73F295E820C18C45007FBBA5 /* QuotesViewController.swift */,
+				73F295EA20C18C52007FBBA5 /* SettingsViewController.swift */,
+				73F295EC20C1A5A3007FBBA5 /* UniversitySelectionViewController.swift */,
+				73278C8E20E0BD4700AF6FD2 /* NewEventViewController.swift */,
+				738AB89C20F424F400C70467 /* NewQuoteViewController.swift */,
+				733964352104655600C7C79B /* EventDetailTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		739A84CA20997AD300FB60A0 /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				739A84C820997A5E00FB60A0 /* UsernameTextField.swift */,
+				739A84CB20998B5300FB60A0 /* LoginAndSignUpButton.swift */,
+				73EDF2692099E5E7003C0215 /* EventCustomCellTableViewCell.swift */,
+				73EDF26D2099EB4B003C0215 /* EventCellView.swift */,
+				73ABEE7120F2FE5800E6AD49 /* QuoteTableViewCell.swift */,
+				738AB89E20F4379300C70467 /* SettingsTableViewCell.swift */,
+				7339643321045F9300C7C79B /* EventDetailTableViewCell.swift */,
+				733964372104726D00C7C79B /* EventActionsTableViewCell.swift */,
+			);
+			path = CustomComponents;
+			sourceTree = "<group>";
+		};
+		73ABEE7320F31A7000E6AD49 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				73ABEE7420F31A8400E6AD49 /* Event.swift */,
+				73ABEE7620F31BA100E6AD49 /* Quote.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		73F295E520C09B8B007FBBA5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				73F295E620C09C9E007FBBA5 /* FireBaseHelper.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A82030233D750013C9496740 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				496631A1D26EA610EA667DD0 /* Pods-UNCC-YesPlus.debug.xcconfig */,
+				C25F0A26D4998BB5E73FB21E /* Pods-UNCC-YesPlus.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +201,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7314F7D3205C6A2B00D8590C /* Build configuration list for PBXNativeTarget "UNCC-YesPlus" */;
 			buildPhases = (
+				FD0DCF44266F2A76BED6F002 /* [CP] Check Pods Manifest.lock */,
 				7314F7BD205C6A2A00D8590C /* Sources */,
 				7314F7BE205C6A2A00D8590C /* Frameworks */,
 				7314F7BF205C6A2A00D8590C /* Resources */,
+				7F5D259C0161F77B8D4C06B8 /* [CP] Embed Pods Frameworks */,
+				8D5F751CB70F156BE2E0B985 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -97,6 +230,14 @@
 					7314F7C0205C6A2A00D8590C = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -124,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7314F7CF205C6A2B00D8590C /* LaunchScreen.storyboard in Resources */,
+				73FC8A66209F9B6200DED24D /* GoogleService-Info.plist in Resources */,
 				7314F7CC205C6A2A00D8590C /* Assets.xcassets in Resources */,
 				7314F7CA205C6A2A00D8590C /* Main.storyboard in Resources */,
 			);
@@ -131,13 +273,105 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7F5D259C0161F77B8D4C06B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UNCC-YesPlus/Pods-UNCC-YesPlus-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UNCC-YesPlus/Pods-UNCC-YesPlus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D5F751CB70F156BE2E0B985 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UNCC-YesPlus/Pods-UNCC-YesPlus-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UNCC-YesPlus/Pods-UNCC-YesPlus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD0DCF44266F2A76BED6F002 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UNCC-YesPlus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7314F7BD205C6A2A00D8590C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7314F7C7205C6A2A00D8590C /* ViewController.swift in Sources */,
+				73F295E720C09C9E007FBBA5 /* FireBaseHelper.swift in Sources */,
+				7314F7D7205C731000D8590C /* LaunchScreenViewController.swift in Sources */,
+				738AB89D20F424F400C70467 /* NewQuoteViewController.swift in Sources */,
+				733964362104655600C7C79B /* EventDetailTableViewController.swift in Sources */,
+				73FC8A68209FAB0F00DED24D /* ManualRegisterViewController.swift in Sources */,
+				73EDF26E2099EB4B003C0215 /* EventCellView.swift in Sources */,
 				7314F7C5205C6A2A00D8590C /* AppDelegate.swift in Sources */,
+				738AB89F20F4379300C70467 /* SettingsTableViewCell.swift in Sources */,
+				739A84C920997A5E00FB60A0 /* UsernameTextField.swift in Sources */,
+				73ABEE7520F31A8400E6AD49 /* Event.swift in Sources */,
+				7339643421045F9300C7C79B /* EventDetailTableViewCell.swift in Sources */,
+				73278C8F20E0BD4700AF6FD2 /* NewEventViewController.swift in Sources */,
+				73ABEE7720F31BA100E6AD49 /* Quote.swift in Sources */,
+				73EDF26C2099E6D0003C0215 /* EventsViewController.swift in Sources */,
+				733498AE20B205D200EE82FB /* SignUpViewController.swift in Sources */,
+				733964382104726D00C7C79B /* EventActionsTableViewCell.swift in Sources */,
+				73F295EB20C18C52007FBBA5 /* SettingsViewController.swift in Sources */,
+				73F295ED20C1A5A3007FBBA5 /* UniversitySelectionViewController.swift in Sources */,
+				7314F7D9205C746A00D8590C /* HomeViewController.swift in Sources */,
+				73EDF26A2099E5E7003C0215 /* EventCustomCellTableViewCell.swift in Sources */,
+				731250722063E98A00680795 /* CustomHomeTableViewCell.swift in Sources */,
+				73ABEE7220F2FE5800E6AD49 /* QuoteTableViewCell.swift in Sources */,
+				739A84CC20998B5300FB60A0 /* LoginAndSignUpButton.swift in Sources */,
+				73FC8A6A209FADC900DED24D /* LoginViewController.swift in Sources */,
+				73F295E920C18C45007FBBA5 /* QuotesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -262,7 +496,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -272,8 +506,10 @@
 		};
 		7314F7D4205C6A2B00D8590C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 496631A1D26EA610EA667DD0 /* Pods-UNCC-YesPlus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "UNCC-YesPlus/UNCC-YesPlus.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XU4EKNT3UT;
 				INFOPLIST_FILE = "UNCC-YesPlus/Info.plist";
@@ -287,8 +523,10 @@
 		};
 		7314F7D5205C6A2B00D8590C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C25F0A26D4998BB5E73FB21E /* Pods-UNCC-YesPlus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "UNCC-YesPlus/UNCC-YesPlus.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XU4EKNT3UT;
 				INFOPLIST_FILE = "UNCC-YesPlus/Info.plist";
