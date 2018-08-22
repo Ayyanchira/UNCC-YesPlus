@@ -67,6 +67,9 @@ class EventDetailTableViewController: UITableViewController {
 
     
     func loadAttendees() {
+        acceptedInvites = []
+        rejectedInvites = []
+        tentativeInvites = []
         let userReference = rootref.child("iOSUsers")
         userReference.observe(DataEventType.value) { (snapShot) in
             if let usersArray = snapShot.value as? NSDictionary{
@@ -302,7 +305,12 @@ class EventDetailTableViewController: UITableViewController {
                 }else if context == "tentative"{
                     self.userStatusUpdated = .Tentative
                 }
-                self.tableView.reloadData()
+                
+                //TODO: Fetch the new data and update the table. Include table reloading in that function
+//                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.fetchUpdatedEventDetail()
+                }
             }else{
                 print(error?.localizedDescription ?? "Error occured while marking the attendance")
             }
@@ -315,12 +323,68 @@ class EventDetailTableViewController: UITableViewController {
         listReference.removeValue { (error, dbref) in
             if error == nil{
                 self.userStatusUpdated = .NotResponded
-                self.tableView.reloadData()
+                //TODO: Fetch the new data and update the table
+//                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.fetchUpdatedEventDetail()
+                }
             }else{
                 print(error?.localizedDescription ?? "Error while updating the firebase values")
             }
         }
     }
     
+    func fetchUpdatedEventDetail() {
+        let dataReference = self.rootref.child("allEvents").child((eventDetail?.eventKey)!)
+        dataReference.observeSingleEvent(of: .value) { (dataSnapshot, message) in
+            if message == nil{
+                if let eventObject = dataSnapshot.value as? [String:Any]{
+                    //let eventObject = values[key] as? [String:Any]
+                    let eventKey = eventObject["eId"] as! String
+                    let eventTitle = eventObject["eTitle"] as! String
+                    let fromDate = eventObject["eDate"] as! String
+                    let fromTime = eventObject["eStartTime"] as! String
+                    let toDate = eventObject["eDate"] as! String
+                    let toTime = eventObject["eEndTime"] as! String
+                    let location = eventObject["eLocation"] as? String ?? "Not provided"
+                    let university = eventObject["eUniversity"] as! String
+                    let eventDescription = eventObject["eDescription"] as! String
+                    let acceptedInvites = eventObject["accepted"] as? [String:String]
+                    let rejectedInvites = eventObject["rejected"] as? [String:String]
+                    let tentativeInvites = eventObject["tentative"] as? [String:String]
+                    
+                    let event = Event(eventKey: eventKey, title: eventTitle, eventDescription: eventDescription, fromDate: fromDate, fromTime: fromTime, toDate: toDate, toTime: toTime, location: location, university: university)
+                    var acceptedKeys = [String]()
+                    if(acceptedInvites != nil){
+                        for value in (acceptedInvites?.values)!{
+                            acceptedKeys.append(value)
+                        }
+                    }
+                    var rejectedKeys = [String]()
+                    if(rejectedInvites != nil){
+                        for value in (rejectedInvites?.values)!{
+                            rejectedKeys.append(value)
+                        }
+                    }
+                    var tentativeKeys = [String]()
+                    if(tentativeInvites != nil){
+                        for value in (tentativeInvites?.values)!{
+                            tentativeKeys.append(value)
+                        }
+                    }
+                    event.acceptedInvites = acceptedKeys
+                    event.rejectedInvites = rejectedKeys
+                    event.tentativeInvites = tentativeKeys
+                    self.eventDetail = event
+                    
+                    self.loadAttendees()
+                    self.tableView.reloadData()
+                    self.tableView.scrollToNearestSelectedRow(at: .bottom, animated: true)
+                }
+            }else{
+                print("Some error occurred in refreshing the table...")
+            }
+        }
+    }
 
 }
