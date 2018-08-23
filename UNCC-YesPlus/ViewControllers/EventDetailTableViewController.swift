@@ -18,6 +18,7 @@ class EventDetailTableViewController: UITableViewController {
         case Tentative
     }
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var acceptedInvites:[String] = []
     var rejectedInvites:[String] = []
     var tentativeInvites:[String] = []
@@ -119,12 +120,11 @@ class EventDetailTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        
-        //if not admin just 1
-        
-        //if admin return 4
-        return 4
+        if appDelegate.isAdmin{
+            return 4
+        }else{
+            return 1
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -306,8 +306,6 @@ class EventDetailTableViewController: UITableViewController {
                     self.userStatusUpdated = .Tentative
                 }
                 
-                //TODO: Fetch the new data and update the table. Include table reloading in that function
-//                self.tableView.reloadData()
                 DispatchQueue.main.async {
                     self.fetchUpdatedEventDetail()
                 }
@@ -323,8 +321,6 @@ class EventDetailTableViewController: UITableViewController {
         listReference.removeValue { (error, dbref) in
             if error == nil{
                 self.userStatusUpdated = .NotResponded
-                //TODO: Fetch the new data and update the table
-//                self.tableView.reloadData()
                 DispatchQueue.main.async {
                     self.fetchUpdatedEventDetail()
                 }
@@ -338,8 +334,8 @@ class EventDetailTableViewController: UITableViewController {
         let dataReference = self.rootref.child("allEvents").child((eventDetail?.eventKey)!)
         dataReference.observeSingleEvent(of: .value) { (dataSnapshot, message) in
             if message == nil{
+                //TODO: Try to reuse the same fetch functionality from event view controller
                 if let eventObject = dataSnapshot.value as? [String:Any]{
-                    //let eventObject = values[key] as? [String:Any]
                     let eventKey = eventObject["eId"] as! String
                     let eventTitle = eventObject["eTitle"] as! String
                     let fromDate = eventObject["eDate"] as! String

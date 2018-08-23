@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73102AE0212E18B9007CA036 /* AdminAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73102ADF212E18B9007CA036 /* AdminAccessViewController.swift */; };
 		731250722063E98A00680795 /* CustomHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731250712063E98A00680795 /* CustomHomeTableViewCell.swift */; };
 		7314F7C5205C6A2A00D8590C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7314F7C4205C6A2A00D8590C /* AppDelegate.swift */; };
 		7314F7CA205C6A2A00D8590C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7314F7C8205C6A2A00D8590C /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		496631A1D26EA610EA667DD0 /* Pods-UNCC-YesPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UNCC-YesPlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UNCC-YesPlus/Pods-UNCC-YesPlus.debug.xcconfig"; sourceTree = "<group>"; };
 		667B61BDD29AD4C9F0345A01 /* Pods_UNCC_YesPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UNCC_YesPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73102ADF212E18B9007CA036 /* AdminAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAccessViewController.swift; sourceTree = "<group>"; };
 		731250712063E98A00680795 /* CustomHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHomeTableViewCell.swift; sourceTree = "<group>"; };
 		7314F7C1205C6A2A00D8590C /* UNCC-YesPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UNCC-YesPlus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7314F7C4205C6A2A00D8590C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				73278C8E20E0BD4700AF6FD2 /* NewEventViewController.swift */,
 				738AB89C20F424F400C70467 /* NewQuoteViewController.swift */,
 				733964352104655600C7C79B /* EventDetailTableViewController.swift */,
+				73102ADF212E18B9007CA036 /* AdminAccessViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				738AB89F20F4379300C70467 /* SettingsTableViewCell.swift in Sources */,
 				739A84C920997A5E00FB60A0 /* UsernameTextField.swift in Sources */,
 				73ABEE7520F31A8400E6AD49 /* Event.swift in Sources */,
+				73102AE0212E18B9007CA036 /* AdminAccessViewController.swift in Sources */,
 				7339643421045F9300C7C79B /* EventDetailTableViewCell.swift in Sources */,
 				73278C8F20E0BD4700AF6FD2 /* NewEventViewController.swift in Sources */,
 				73ABEE7720F31BA100E6AD49 /* Quote.swift in Sources */,

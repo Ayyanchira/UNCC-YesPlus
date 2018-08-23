@@ -16,7 +16,14 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-
+    public var isAdmin:Bool{
+        if let admin = UserDefaults.standard.value(forKey: "AdminAccess") as? Bool{
+            return admin
+        }else{
+            return false
+        }
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -28,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Enabling push notifications for the app
         registerForPushNotifications()
+        
         return true
     }
 

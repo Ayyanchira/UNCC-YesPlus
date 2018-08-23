@@ -63,9 +63,19 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setupRemoteConfigDefaults()
+        //setupRemoteConfigDefaults()
+        self.settingsTableView.reloadData()
     }
     
+    
+    func isAdmin() -> Bool {
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        if appdelegate.isAdmin == true{
+            return true
+        }else{
+            return false
+        }
+    }
     //PRAGMA MARK: Table View delegate methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return options.count
@@ -76,10 +86,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         switch indexPath.row {
         case 0:
             cell.settingMenuLabel.text = "Push Notification"
+            cell.settingSwitch.tag = 0
             
         case 1:
             cell.settingMenuLabel.text = "Admin Access"
-            
+            cell.settingSwitch.tag = 1
+            cell.settingSwitch.setOn(isAdmin(), animated: true)
+        
         case 2:
             cell.settingMenuLabel.text = "Logout"
             cell.settingMenuLabel.textColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
@@ -89,6 +102,41 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             print("Table view error. Please check settings table view code...")
         }
         return cell
+    }
+    
+    
+    @IBAction func switchPressed(_ sender: UISwitch) {
+        if sender.tag == 0{
+           //Switch for push notification
+        }else if sender.tag == 1{
+            print("Admin switch toggled")
+            if sender.isOn{
+                //TODO: Check everything here. And set false if passcode fails
+                askForAdminPassword()
+                //sender.setOn(false, animated: true)
+            }else{
+                //remove admin access
+                UserDefaults.standard.set(false, forKey: "AdminAccess")
+            }
+        }
+    }
+    
+    
+    func askForAdminPassword(){
+//        createPasscodeUI()
+        //TODO: Present passcode entry view controller
+        self.performSegue(withIdentifier: "enterPasscode", sender: nil)
+    }
+    
+    //TODO: Remove below code which was supposed to show a pop up with custom passcode text field. Instead we are going to present a view for passcode entry
+    func createPasscodeUI(){
+        let passCodeView = UIView(frame: CGRect(x: self.view.frame.width/2 - 100, y: self.view.frame.height/2 - 150, width: 200, height: 300))
+        passCodeView.backgroundColor = #colorLiteral(red: 0.1643057168, green: 0.167824924, blue: 0.2028948665, alpha: 0.9470527251)
+        passCodeView.layer.cornerRadius = 15
+        passCodeView.tag = 200
+        passCodeView.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        passCodeView.layer.borderWidth = 2.5
+        self.view.addSubview(passCodeView)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -102,6 +150,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             UserDefaults.standard.removeObject(forKey: "uuid")
             do {
                 try Auth.auth().signOut()
+                UserDefaults.standard.set(false, forKey: "AdminAccess")
             } catch let signoutError as NSError {
                 print(signoutError.localizedDescription)
             }

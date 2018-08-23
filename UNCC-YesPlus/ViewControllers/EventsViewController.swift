@@ -13,6 +13,7 @@ class EventsViewController: UITableViewController {
 
     let rootref = Database.database().reference()
     var events:[Event] = []
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,6 +99,30 @@ class EventsViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "eventDetail", sender: events[indexPath.row])
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return appDelegate.isAdmin
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        if appDelegate.isAdmin{
+            let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (rowAction, indexPath) in
+                self.deleteQuoteAt(indexPath: indexPath)
+            }
+            return [deleteAction]
+        }else{
+            return nil
+        }
+        
+    }
+    
+    func deleteQuoteAt(indexPath:IndexPath) {
+        let eventToDelete = events[indexPath.row]
+        let eventReference = rootref.child("allEvents").child(eventToDelete.eventKey)
+        eventReference.removeValue { (error, dbRef) in
+            self.fetchEvents()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -10,6 +10,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="FFj-0d-TTD">
@@ -521,6 +526,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="fPZ-8V-Stw" id="FA9-UO-eas"/>
                         <outlet property="eventsView" destination="GLK-Qc-Hum" id="TGs-dq-uu9"/>
                         <outlet property="quotesView" destination="j0s-TH-u2w" id="wz0-Ia-W1E"/>
                         <outlet property="settingsView" destination="mXV-gy-eXt" id="z9U-c4-zt0"/>
@@ -988,7 +994,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAA-TW-Q7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5402" y="1027"/>
+            <point key="canvasLocation" x="6393" y="1019"/>
         </scene>
         <!--Events View Controller-->
         <scene sceneID="PC6-d4-b5e">
@@ -1450,6 +1456,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sUr-3N-84F">
                                                     <rect key="frame" x="309" y="26" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="switchPressed:" destination="4UB-LN-2bX" eventType="valueChanged" id="edV-aE-VRK"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -1484,11 +1493,87 @@
                     </view>
                     <connections>
                         <outlet property="settingsTableView" destination="ItC-6G-6yF" id="jNu-Cx-lp4"/>
+                        <segue destination="00e-WM-9l3" kind="presentation" identifier="enterPasscode" id="sWI-Xq-XB0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l09-g6-PVy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4186.3999999999996" y="770.91454272863575"/>
+            <point key="canvasLocation" x="3825" y="779"/>
+        </scene>
+        <!--Admin Access View Controller-->
+        <scene sceneID="il8-Hf-Uti">
+            <objects>
+                <viewController id="00e-WM-9l3" customClass="AdminAccessViewController" customModule="UNCC_YesPlus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2eQ-Ge-ui8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Admin Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzu-NN-KP1">
+                                <rect key="frame" x="106.5" y="40" width="162.5" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
+                                <color key="textColor" red="0.98860453440449692" green="1" blue="0.99246336163549043" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mRg-qA-1sf" customClass="UsernameTextField" customModule="UNCC_YesPlus" customModuleProvider="target">
+                                <rect key="frame" x="46" y="91.5" width="282" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="cfC-0V-LWO"/>
+                                    <constraint firstAttribute="width" constant="282" id="dfJ-uM-uGX"/>
+                                </constraints>
+                                <color key="textColor" red="0.9882352941176471" green="1" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8K8-Ey-hBi">
+                                <rect key="frame" x="40" y="256.5" width="294" height="61"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fU1-xe-2dI" customClass="LoginAndSignUpButton" customModule="UNCC_YesPlus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="137" height="61"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="61" id="UkW-03-8dB"/>
+                                            <constraint firstAttribute="width" constant="137" id="aMQ-tM-pc0"/>
+                                        </constraints>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="0.97647058819999999" green="0.98823529409999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="00e-WM-9l3" eventType="touchUpInside" id="WJ4-Jb-oPu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPa-J6-3c9" customClass="LoginAndSignUpButton" customModule="UNCC_YesPlus" customModuleProvider="target">
+                                        <rect key="frame" x="157" y="0.0" width="137" height="61"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="137" id="PPR-OE-eJN"/>
+                                            <constraint firstAttribute="height" constant="61" id="zvB-OB-Oeb"/>
+                                        </constraints>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" red="0.97647058823529409" green="0.9882352941176471" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButtonPressed:" destination="00e-WM-9l3" eventType="touchUpInside" id="nzh-i1-i5Q"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16470588235294117" green="0.16862745098039217" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mRg-qA-1sf" firstAttribute="centerX" secondItem="Mzz-So-GFR" secondAttribute="centerX" id="a99-Au-pcz"/>
+                            <constraint firstItem="vzu-NN-KP1" firstAttribute="centerX" secondItem="Mzz-So-GFR" secondAttribute="centerX" id="hjx-gS-7mJ"/>
+                            <constraint firstItem="vzu-NN-KP1" firstAttribute="top" secondItem="Mzz-So-GFR" secondAttribute="top" constant="20" id="oJM-MH-4SL"/>
+                            <constraint firstItem="mRg-qA-1sf" firstAttribute="top" secondItem="vzu-NN-KP1" secondAttribute="bottom" constant="28" id="oif-AQ-fJO"/>
+                            <constraint firstItem="8K8-Ey-hBi" firstAttribute="centerY" secondItem="Mzz-So-GFR" secondAttribute="centerY" id="w9x-AS-GNq"/>
+                            <constraint firstItem="8K8-Ey-hBi" firstAttribute="centerX" secondItem="Mzz-So-GFR" secondAttribute="centerX" id="ywZ-4z-New"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mzz-So-GFR"/>
+                    </view>
+                    <connections>
+                        <outlet property="passcodeTextField" destination="mRg-qA-1sf" id="9ql-v7-4OL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SbT-He-Ii0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4743.1999999999998" y="776.31184407796104"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RbY-Qz-oxB">

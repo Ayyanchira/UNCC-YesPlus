@@ -13,6 +13,7 @@ class QuotesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     let rootReference = Database.database().reference()
     var quotes:[Quote] = []
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -38,14 +39,19 @@ class QuotesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        return appDelegate.isAdmin
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (rowAction, indexPath) in
-            self.deleteQuoteAt(indexPath: indexPath)
+        if appDelegate.isAdmin{
+            let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (rowAction, indexPath) in
+                self.deleteQuoteAt(indexPath: indexPath)
+            }
+            return [deleteAction]
+        }else{
+            return nil
         }
-        return [deleteAction]
+        
     }
     
     func deleteQuoteAt(indexPath:IndexPath) {
